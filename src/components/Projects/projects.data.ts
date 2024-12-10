@@ -2,6 +2,7 @@ import { ProjectItems } from '@/types/types'
 
 export const PROJECTS: ProjectItems[] = [
 	{
+		id: 'go-peei',
 		title: 'GoPeei',
 		descr:
 			'A multi-page website of a public organization for environmental protection and ecology. The project is commercial. Role: developer. Term of work in the project: more than half a year.',
@@ -31,6 +32,7 @@ export const PROJECTS: ProjectItems[] = [
 		type: 'Commercial project',
 	},
 	{
+		id: 'todo-react',
 		title: 'Todo React',
 		descr:
 			'Adaptive web application for creating a to-do list. It has functionality: add, delete and edit notes, change application language, choose light or dark theme. Role: developer.',
@@ -60,6 +62,7 @@ export const PROJECTS: ProjectItems[] = [
 		type: 'Pet-project',
 	},
 	{
+		id: 'goodies-at-the-table',
 		title: 'Goodies at the table',
 		descr:
 			'A café website with a responsive layout, the ability to choose dishes, and an attractive design. Role: developer.',
@@ -89,6 +92,7 @@ export const PROJECTS: ProjectItems[] = [
 		type: 'Pet-project',
 	},
 	{
+		id: 'vue-weather-web',
 		title: 'Vue Weather Web',
 		descr:
 			'Desktop web application developed in Vue 3 using Options API. It has a colorful design and user-friendly interface. There is an option to get weather by city name or by geolocation coordinates. The openweather API resource is used to retrieve data from the server. Role: Developer.',
@@ -114,6 +118,7 @@ export const PROJECTS: ProjectItems[] = [
 		type: 'Pet-project',
 	},
 	{
+		id: 'filmoteka',
 		title: 'Filmoteka',
 		descr:
 			'Application for choosing a movie. App component with Public and Private routes, AuthPage page logic. Team project at GoIT school. Role: developer.',
@@ -141,6 +146,7 @@ export const PROJECTS: ProjectItems[] = [
 		type: 'Course project',
 	},
 	{
+		id: 'ice-cream',
 		title: 'Ice Cream',
 		descr:
 			'Ice company website with responsive layout, burger menu, modal window and attractive design. Team project at GoIT school. Role: developer.',
@@ -166,6 +172,7 @@ export const PROJECTS: ProjectItems[] = [
 		type: 'Course project',
 	},
 	{
+		id: 'web-studio',
 		title: 'Web Studio',
 		descr:
 			'Web studio website with adaptive layout, two pages.Modal window, attractive cards of finished projects, interestingdesign. Study project at GoIT School. Role: developer.',
@@ -191,6 +198,7 @@ export const PROJECTS: ProjectItems[] = [
 		type: 'Course project',
 	},
 	{
+		id: 'weather-app',
 		title: 'Weather App',
 		descr:
 			'A weather viewing application with the ability to save the history of queries and determine the weather using geolocation. Role: developer.',
@@ -216,6 +224,7 @@ export const PROJECTS: ProjectItems[] = [
 		type: 'Pet-project',
 	},
 	{
+		id: 'news-app',
 		title: 'News App',
 		descr:
 			'Web application for viewing news, with the ability to search and filter by category, with an adaptive design. Work on the project is on pause. Role: developer.',

@@ -22,6 +22,7 @@ export type ExperienceItems = {
 }
 
 export type ProjectItems = {
+	id: string
 	title: string
 	descr: string
 	gitHubUrl: string

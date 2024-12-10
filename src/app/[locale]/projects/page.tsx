@@ -19,7 +19,6 @@ export default function Projects() {
 	const handleFilterChange = (updatedFilters: typeof filters) => {
 		setFilters(updatedFilters)
 	}
-
 	return (
 		<div className='section'>
 			<div className='container'>

@@ -42,41 +42,42 @@ const SelectWithIcon = ({
 	}
 
 	return (
-		<div className='relative' ref={selectRef}>
-			{/* Лейбл */}
-			<label
-				className={`absolute top-[-8px] left-3 text-sm bg-white px-1 transition-all duration-300 ${
-					isOpen || value.length > 0 ? 'text-xs text-blue-600' : 'text-gray-500'
-				}`}
-			>
-				{label}
+		<div className='relative w-full' ref={selectRef}>
+			<label className='label group cursor-pointer'>
+				<span
+					className={`label-text  ${
+						isOpen || value.length > 0
+							? 'text-xs text-blue-600'
+							: 'text-gray-500'
+					}`}
+				>
+					{label}
+				</span>
+				<div
+					className={`label-input text-gray-700 flex gap-1 ${
+						isOpen ? 'border-blue-600' : 'hover:border-gray-400'
+					}`}
+					onClick={() => setIsOpen(!isOpen)}
+				>
+					{value.length > 0
+						? value.map(selected => (
+								<div
+									key={selected}
+									className='flex items-center bg-blue-100 text-blue-600 px-2 py-1 rounded-md text-sm'
+								>
+									{selected}
+									<FaTimes
+										className='ml-1 text-red-500 cursor-pointer'
+										onClick={e => {
+											e.stopPropagation()
+											handleRemoveOption(selected)
+										}}
+									/>
+								</div>
+						  ))
+						: 'Select'}
+				</div>
 			</label>
-
-			{/* Поле выбора */}
-			<div
-				className={`border border-gray-300 rounded-md p-2 cursor-pointer transition-all ${
-					isOpen ? 'border-blue-600' : 'hover:border-gray-400'
-				}`}
-				onClick={() => setIsOpen(!isOpen)}
-			>
-				{value.length > 0
-					? value.map(selected => (
-							<div
-								key={selected}
-								className='flex items-center bg-blue-100 text-blue-600 px-2 py-1 rounded-md text-sm'
-							>
-								{selected}
-								<FaTimes
-									className='ml-1 text-red-500 cursor-pointer'
-									onClick={e => {
-										e.stopPropagation()
-										handleRemoveOption(selected)
-									}}
-								/>
-							</div>
-					  ))
-					: 'Select'}
-			</div>
 
 			{/* Выпадающий список */}
 			{isOpen && (

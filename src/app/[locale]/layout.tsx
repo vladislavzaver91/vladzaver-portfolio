@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
 import { routing } from '@/i18n/routing'
+import { AnimatePresence } from 'framer-motion'
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
@@ -44,9 +45,11 @@ export default async function RootLayout({
 		<html lang={locale}>
 			<body className={`${montserrat.className} ${rubik.className}`}>
 				<NextIntlClientProvider messages={messages}>
-					<Header />
-					{children}
-					<Footer />
+					<AnimatePresence mode='wait' initial={false}>
+						<Header />
+						{children}
+						<Footer />
+					</AnimatePresence>
 				</NextIntlClientProvider>
 			</body>
 		</html>

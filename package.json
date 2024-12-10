@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@next/font": "^14.2.15",
+    "@react-spring/web": "^9.7.5",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^11.13.1",
     "i18next": "^23.16.5",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.6.2",

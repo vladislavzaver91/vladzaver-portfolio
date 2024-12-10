@@ -26,17 +26,8 @@ const ProjectsFilter = ({ onFilterChange }: IFilterProps) => {
 		onFilterChange(updateFilters)
 	}
 
-	const handleSkillsChange = (skill: string) => {
-		const updateSkills = filters.skills.includes(skill)
-			? filters.skills.filter(s => s !== skill)
-			: [...filters.skills, skill]
-
-		setFilters(prev => ({ ...prev, skills: updateSkills }))
-		onFilterChange({ ...filters, skills: updateSkills })
-	}
-
 	return (
-		<div className='filters flex flex-col gap-4'>
+		<div className='filters flex gap-5 mb-12'>
 			<Select
 				label='Role'
 				options={['Front-end developer']}
