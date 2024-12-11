@@ -5,7 +5,7 @@ export const PROJECTS: ProjectItems[] = [
 		id: 'go-peei',
 		title: 'GoPeei',
 		descr:
-			'A multi-page website of a public organization for environmental protection and ecology. The project is commercial. Role: developer. Term of work in the project: more than half a year.',
+			'A multi-page website of a public organization for environmental protection and ecology. The project is commercial. Term of work in the project: more than half a year.',
 		gitHubUrl: 'https://github.com/ImVladislav/go-peei',
 		projectUrl: 'https://peei.org.ua',
 		img: '/projects/go-peei-main.png',
@@ -35,7 +35,7 @@ export const PROJECTS: ProjectItems[] = [
 		id: 'todo-react',
 		title: 'Todo React',
 		descr:
-			'Adaptive web application for creating a to-do list. It has functionality: add, delete and edit notes, change application language, choose light or dark theme. Role: developer.',
+			'Adaptive web application for creating a to-do list. It has functionality: add, delete and edit notes, change application language, choose light or dark theme.',
 		gitHubUrl: 'https://github.com/vladislavzaver91/Todo-React',
 		projectUrl: 'https://todo-react-three-steel.vercel.app/',
 		img: '/projects/todo-react-main.png',
@@ -65,7 +65,7 @@ export const PROJECTS: ProjectItems[] = [
 		id: 'goodies-at-the-table',
 		title: 'Goodies at the table',
 		descr:
-			'A café website with a responsive layout, the ability to choose dishes, and an attractive design. Role: developer.',
+			'A café website with a responsive layout, the ability to choose dishes, and an attractive design.',
 		gitHubUrl: 'https://github.com/vladislavzaver91/goodies-at-the-table-app',
 		projectUrl: 'https://goodies-at-the-table-app.vercel.app',
 		img: '/projects/goodies-main.png',
@@ -95,7 +95,7 @@ export const PROJECTS: ProjectItems[] = [
 		id: 'vue-weather-web',
 		title: 'Vue Weather Web',
 		descr:
-			'Desktop web application developed in Vue 3 using Options API. It has a colorful design and user-friendly interface. There is an option to get weather by city name or by geolocation coordinates. The openweather API resource is used to retrieve data from the server. Role: Developer.',
+			'Desktop web application developed in Vue 3 using Options API. It has a colorful design and user-friendly interface. There is an option to get weather by city name or by geolocation coordinates. The openweather API resource is used to retrieve data from the server.',
 		gitHubUrl: 'https://github.com/vladislavzaver91/Vue-Weather-Web',
 		projectUrl: 'https://vue-weather-web.vercel.app/',
 		img: '/projects/vue-weather-main.png',
@@ -121,7 +121,7 @@ export const PROJECTS: ProjectItems[] = [
 		id: 'filmoteka',
 		title: 'Filmoteka',
 		descr:
-			'Application for choosing a movie. App component with Public and Private routes, AuthPage page logic. Team project at GoIT school. Role: developer.',
+			'Application for choosing a movie. App component with Public and Private routes, AuthPage page logic. Team project at GoIT school.',
 		gitHubUrl:
 			'https://github.com/vladislavzaver91/JS-groups-project-Filmoteka',
 		projectUrl:
@@ -149,7 +149,7 @@ export const PROJECTS: ProjectItems[] = [
 		id: 'ice-cream',
 		title: 'Ice Cream',
 		descr:
-			'Ice company website with responsive layout, burger menu, modal window and attractive design. Team project at GoIT school. Role: developer.',
+			'Ice company website with responsive layout, burger menu, modal window and attractive design. Team project at GoIT school.',
 		gitHubUrl: 'https://github.com/vladislavzaver91/Group-project-IceCream',
 		projectUrl: 'https://vladislavzaver91.github.io/Group-project-IceCream/',
 		img: '/projects/icecream-main.png',
@@ -175,7 +175,7 @@ export const PROJECTS: ProjectItems[] = [
 		id: 'web-studio',
 		title: 'Web Studio',
 		descr:
-			'Web studio website with adaptive layout, two pages.Modal window, attractive cards of finished projects, interestingdesign. Study project at GoIT School. Role: developer.',
+			'Web studio website with adaptive layout, two pages.Modal window, attractive cards of finished projects, interesting design. Study project at GoIT School.',
 		gitHubUrl: 'https://github.com/vladislavzaver91/goit-markup-hw-08',
 		projectUrl: 'https://vladislavzaver91.github.io/goit-markup-hw-08/',
 		img: '/projects/webstudio-main.png',
@@ -201,7 +201,7 @@ export const PROJECTS: ProjectItems[] = [
 		id: 'weather-app',
 		title: 'Weather App',
 		descr:
-			'A weather viewing application with the ability to save the history of queries and determine the weather using geolocation. Role: developer.',
+			'A weather viewing application with the ability to save the history of queries and determine the weather using geolocation.',
 		gitHubUrl: 'https://github.com/vladislavzaver91/weather-web-app',
 		projectUrl: 'https://weather-web-app-self.vercel.app',
 		img: '/projects/weather-main.png',
@@ -227,7 +227,7 @@ export const PROJECTS: ProjectItems[] = [
 		id: 'news-app',
 		title: 'News App',
 		descr:
-			'Web application for viewing news, with the ability to search and filter by category, with an adaptive design. Work on the project is on pause. Role: developer.',
+			'Web application for viewing news, with the ability to search and filter by category, with an adaptive design. Work on the project is on pause.',
 		gitHubUrl: 'https://github.com/vladislavzaver91/news-app',
 		projectUrl: 'https://news-app-blond-eta.vercel.app/',
 		img: '/projects/newsapp-main.png',

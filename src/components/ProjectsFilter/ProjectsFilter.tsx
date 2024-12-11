@@ -42,7 +42,7 @@ const ProjectsFilter = ({ onFilterChange }: IFilterProps) => {
 			/>
 			<Select
 				label='Type'
-				options={['Commercial project', 'Pet-project', 'Cource project']}
+				options={['Commercial project', 'Pet-project', 'Course project']}
 				value={filters.type}
 				onChange={value => handleFilterChange('type', value)}
 			/>

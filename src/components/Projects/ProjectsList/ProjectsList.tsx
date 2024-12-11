@@ -1,6 +1,5 @@
 'use client'
 
-import { Link } from '@/i18n/routing'
 import { ProjectItems, ProjectsFilter } from '@/types/types'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -8,9 +7,11 @@ import Image from 'next/image'
 const ProjectsList = ({
 	projects,
 	filters = { role: '', completionYear: '', type: '', skills: [] },
+	onProjectClick,
 }: {
 	projects: ProjectItems[]
 	filters?: ProjectsFilter
+	onProjectClick: (id: string) => void
 }) => {
 	const filteredProjects = projects.filter(project => {
 		const { role, completionYear, type, skills } = filters
@@ -33,12 +34,13 @@ const ProjectsList = ({
 				filteredProjects.map(project => (
 					<motion.li
 						key={project.id}
-						className='w-[390px]'
+						onClick={() => onProjectClick(project.id)}
+						className='w-[390px] cursor-pointer'
 						layoutId={`project-${project.id}`}
 						whileHover={{ scale: 1.05 }}
 						transition={{ duration: 0.3 }}
 					>
-						<Link href={`/projects/${project.id}`} className='group'>
+						<div className='group'>
 							<div className='relative overflow-hidden'>
 								<div className='overflow-hidden relative w-full h-[301px] rounded-2xl'>
 									<Image
@@ -55,7 +57,7 @@ const ProjectsList = ({
 									</h3>
 								</div>
 							</div>
-						</Link>
+						</div>
 					</motion.li>
 				))
 			) : (
