@@ -1,36 +1,43 @@
+import { IconType } from 'react-icons/lib'
+
+export type NavItems = {
+	name: string
+	link: string
+	icon: IconType
+}
+
 export type SkillIcons = {
 	src: string
 	name: string
 }
 
 export type SocialLinks = {
-	src: string
+	icon: IconType
 	href: string
 	name: string
 }
 
 export type AddressProps = {
 	href: string
-	descr: string
+	description: string
 	name: string
 }
 
 export type ExperienceItems = {
 	title: string
-	descr: string
+	description: string
 	period: string
 }
 
 export type ProjectItems = {
 	id: string
 	title: string
-	descr: string
-	gitHubUrl: string
-	projectUrl: string
-	img: string
+	description: string
+	mainImage: string
+	images: string[]
 	skills: Skill[]
 	role: string
-	completionYear: string
+	period: string
 	type: string
 }
 
@@ -44,4 +51,10 @@ export type ProjectsFilter = {
 	completionYear: string
 	type: string
 	skills: string[]
+}
+
+export type LanguageOption = {
+	code: string
+	name: string
+	flag: string
 }

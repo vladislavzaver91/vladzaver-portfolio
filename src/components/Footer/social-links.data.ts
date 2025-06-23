@@ -1,11 +1,20 @@
-import { SocialLinks } from '@/types/types';
+import { SocialLinks } from '@/types/types'
+import { FaTelegramPlane, FaLinkedinIn, FaGithub } from 'react-icons/fa'
 
 export const SOCIAL_LINKS: SocialLinks[] = [
-	{ src: '/skill-icons/Telegram.png', href: 'https://t.me/VladislavZaver', name: 'Telegram' },
 	{
-		src: '/skill-icons/Linkedin.svg',
+		icon: FaTelegramPlane,
+		href: 'https://t.me/VladislavZaver',
+		name: 'Telegram',
+	},
+	{
+		icon: FaLinkedinIn,
 		href: 'https://www.linkedin.com/in/vladislav-zavertaylo-480626264/',
 		name: 'Linkedin',
 	},
-	{ src: '/skill-icons/GitHub.svg', href: 'https://github.com/vladislavzaver91?tab=repositories', name: 'GitHub' },
-];
+	{
+		icon: FaGithub,
+		href: 'https://github.com/vladislavzaver91?tab=repositories',
+		name: 'GitHub',
+	},
+]

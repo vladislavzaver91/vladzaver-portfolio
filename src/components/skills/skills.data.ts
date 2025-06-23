@@ -1,0 +1,26 @@
+import { SkillIcons } from '@/types/types'
+
+export const SKILL_ICONS: SkillIcons[] = [
+	{ src: '/skill-icons/HTML5.svg', name: 'HTML5' },
+	{ src: '/skill-icons/CSS3.svg', name: 'CSS3' },
+	{ src: '/skill-icons/Sass.svg', name: 'Sass' },
+	{ src: '/skill-icons/TailwindCSS.svg', name: 'TailwindCSS' },
+	{ src: '/skill-icons/JavaScript.svg', name: 'JavaScript' },
+	{ src: '/skill-icons/TypeScript.svg', name: 'TypeScript' },
+	{ src: '/skill-icons/React.svg', name: 'React.js' },
+	{ src: '/skill-icons/Next.svg', name: 'Next.js' },
+	{ src: '/skill-icons/Vite.svg', name: 'Vite' },
+	{ src: '/skill-icons/Vue.svg', name: 'Vue.js' },
+	{ src: '/skill-icons/Redux.svg', name: 'Redux' },
+	{ src: '/skill-icons/Pinia.svg', name: 'Pinia' },
+	{ src: '/skill-icons/TanStackQuery.svg', name: 'TanStackQuery' },
+	{ src: '/skill-icons/Axios.svg', name: 'Axios' },
+	{ src: '/skill-icons/Node.svg', name: 'Node' },
+	{ src: '/skill-icons/Express.svg', name: 'Express' },
+	{ src: '/skill-icons/Nestjs.svg', name: 'Nest.js' },
+	{ src: '/skill-icons/prisma.svg', name: 'Prisma' },
+	{ src: '/skill-icons/supabase.svg', name: 'Supabase' },
+	{ src: '/skill-icons/MongoDB.svg', name: 'MongoDB' },
+	{ src: '/skill-icons/PostgresSQL.svg', name: 'PostgresSQL' },
+	{ src: '/skill-icons/Git.svg', name: 'Git' },
+]

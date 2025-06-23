@@ -1,5 +1,3 @@
-import Footer from '@/components/Footer/Footer'
-import Header from '@/components/Header/Header'
 import { routing } from '@/i18n/routing'
 import { AnimatePresence } from 'framer-motion'
 import type { Metadata } from 'next'
@@ -8,6 +6,8 @@ import { getMessages } from 'next-intl/server'
 import { Montserrat_Alternates, Rubik } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import './globals.css'
+import { Header } from '@/components/header/header'
+import { Footer } from '@/components/footer/footer'
 
 const montserrat = Montserrat_Alternates({
 	weight: ['600', '800'],

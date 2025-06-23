@@ -20,11 +20,24 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	color: var(--foreground);
 	background: var(--background);
 	font-family: 'Rubik', sans-serif;
 	overflow-x: hidden;
+}
+
+header {
+	backdrop-filter: blur(8px); /* Для кроссбраузерности */
+}
+
+/* Стили для бокового навигационного меню */
+nav.fixed {
+	transform: translateY(-50%); /* Центрирование по вертикали */
 }
 
 .font-montserrat {
@@ -39,13 +52,14 @@ body {
 
 .button {
 	font-weight: 600;
-	font-size: 21px;
+	font-size: 18px;
 	text-align: center;
 	color: #161513;
 	background: #ffffff;
 	border-radius: 50px;
-	width: 195px;
-	height: 64px;
+	max-width: 155px;
+	height: 58px;
+	padding: 0px 12px 0px 12px;
 	border: 1px solid #ffffff;
 
 	border: none;
@@ -56,38 +70,31 @@ body {
 		color: #ffffff;
 		border: 2px solid #ffffff;
 	}
-	/* &.active {
-		background: $green-hover;
-	}
-	&:disabled {
-		cursor: no-drop;
-		background: #adadad;
-	} */
-}
-
-.icon-gray {
-	filter: grayscale(100%) brightness(65%);
-	transition: filter 0.3s ease;
-
-	&:hover {
-		filter: grayscale(0%) brightness(100%);
-	}
-}
-
-.container {
-	margin: 0 auto;
-	padding-left: 24px;
-	padding-right: 24px;
 
 	@media screen and (min-width: 768px) {
+		font-size: 21px;
+		max-width: 195px;
+		height: 64px;
+	}
+}
+
+.custom-container {
+	margin: 0 auto;
+	padding-left: 16px;
+	padding-right: 16px;
+
+	@media screen and (min-width: 640px) {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	@media screen and (min-width: 768px) {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+	@media screen and (min-width: 1024px) {
 		padding-left: 40px;
 		padding-right: 40px;
 	}
-	@media screen and (min-width: 1024px) {
-		padding-left: 60px;
-		padding-right: 60px;
-	}
-
 	@media screen and (min-width: 1440px) {
 		max-width: 1440px;
 		padding-left: 80px;
@@ -122,8 +129,8 @@ body {
 	}
 }
 
-.title {
-	margin-bottom: 55px;
+.main-title {
+	margin-bottom: 25px;
 	font-weight: 600;
 	font-size: 24px;
 	font-family: 'Syne', sans-serif;
@@ -137,6 +144,7 @@ body {
 	@media screen and (min-width: 1024px) {
 		font-weight: 800;
 		font-size: 35px;
+		margin-bottom: 55px;
 	}
 }
 
@@ -149,11 +157,11 @@ body {
 }
 
 .project-about-thumb {
-	@apply flex justify-between items-center absolute bottom-0 translate-y-full transition-transform duration-200 py-3 px-6 w-full h-16 rounded-b-2xl bg-gray-800 bg-opacity-80;
+	@apply flex justify-between items-center absolute bottom-0 translate-y-full transition-transform duration-200 py-2.5 px-6 w-full h-20 rounded-b-2xl bg-gray-800 bg-opacity-80;
 }
 
 .label {
-	@apply flex flex-col font-medium text-xl tracking-widest text-secondTextColor uppercase transition-all duration-300 ease-in-out;
+	@apply flex flex-col font-medium text-lg lg:text-xl tracking-widest text-secondTextColor uppercase transition-all duration-300 ease-in-out;
 }
 
 .label-text {
@@ -167,6 +175,13 @@ body {
 input:-webkit-autofill,
 textarea:-webkit-autofill {
 	box-shadow: 0 0 0 30px rgba(70, 90, 126, 0.4) inset !important;
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px #0a0a0a inset !important;
+	box-shadow: 0 0 0px 1000px white inset !important;
+	-webkit-text-fill-color: #000 !important;
+	transition: background-color 9999s ease-in-out 0s;
 }
 
 /* Custom scroll
@@ -195,52 +210,77 @@ Chrome, Safari, Edge, Opera*/
 	scrollbar-color: #5badff;
 }
 
-/* vertical header */
-/* 1 */
-
-/* .vertical-link {
-	overflow: hidden;
-	position: relative;
-	width: 100%;
+.custom-scrollbar::-webkit-scrollbar {
+	width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.4);
 }
 
-.first-letter {
-	position: absolute;
+.mobile-section-nav {
+	backdrop-filter: blur(8px); /* Кроссбраузерный blur */
 }
 
-.text {
-	display: inline-block;
-	transition: transform 0.4s ease, opacity 0.4s ease;
-	transform: translateX(-100%);
-	opacity: 0;
+footer {
+	backdrop-filter: blur(8px); /* Кроссбраузерный blur */
 }
 
-.vertical-link:hover .first-letter,
-.vertical-link:focus .first-letter {
-	transition: transform 0.4s ease, opacity 0.4s ease;
-	opacity: 0;
+@keyframes shimmer {
+	0% {
+		background-position: -200%;
+	}
+	100% {
+		background-position: 200%;
+	}
+}
+.animate-shimmer {
+	animation: shimmer 1.5s infinite;
 }
 
-.vertical-link:hover .text,
-.vertical-link:focus .text {
-	transform: translateX(0);
-	opacity: 1;
-} */
+/* Анимация мигания стрелки вниз */
+@keyframes pulse-down {
+	0% {
+		transform: translateY(0);
+		opacity: 0.7;
+	}
+	50% {
+		transform: translateY(8px);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 0.7;
+	}
+}
+.animate-pulse-down {
+	animation: pulse-down 1.5s ease-in-out infinite;
+}
 
-/* 2 */
-.vertical-link {
+.swiper-pagination {
+	bottom: 10px !important;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
 }
-
-.text {
-	writing-mode: vertical-rl;
-	transform: rotate(180deg);
-	transition: color 0.3s ease;
+.swiper-pagination-bullet {
+	width: 30px !important; /* w-8 */
+	height: 4px !important; /* h-1 */
+	background: #374151 !important;
+	border-radius: 9999px !important; /* rounded-full */
+	margin: 0 4px !important; /* mx-1 */
+	transition: background-color 0.2s !important;
+	opacity: 1 !important;
 }
+.swiper-pagination-bullet-active {
+	width: 54px !important;
+	transition: all;
 
-.vertical-link:hover .text {
-	color: var(--hover-color);
+	background: #5badff !important;
 }

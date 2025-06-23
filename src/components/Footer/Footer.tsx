@@ -1,54 +1,95 @@
-import Link from 'next/link';
-import Button from '../Button/Button';
-import { ADDRESS } from './address.data';
-import SocialLinkList from './SocialLinkList';
+'use client'
 
-const Footer = () => {
+import Link from 'next/link'
+import { SocialLinkList } from './social-link-list'
+import { ButtonCustom } from '../ui/button-custom'
+import { ADDRESS } from './address.data'
+import { motion } from 'framer-motion'
+
+export const Footer = () => {
+	const footerVariants = {
+		hidden: { opacity: 0, y: 20 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: { duration: 0.8, ease: 'easeOut', staggerChildren: 0.2 },
+		},
+	}
+
+	const childVariants = {
+		hidden: { opacity: 0, y: 10 },
+		visible: { opacity: 1, y: 0 },
+	}
+
 	return (
-		<footer className="bg-secondBgColor shadow-custom section-component pb-28">
-			<div className="container">
-				<div className="wrapper flex justify-between items-center">
-					{/* address thumb */}
-					<div>
-						<h3 className="font-bold text-2xl tracking-extra-tight mb-7">Contact</h3>
-						<address>
-							<ul>
+		<motion.footer
+			id='footer'
+			initial='hidden'
+			whileInView='visible'
+			viewport={{ once: true }}
+			variants={footerVariants}
+			className='bg-secondBgColor/90 backdrop-blur-md shadow-custom section-component py-12 md:py-16'
+		>
+			<div className='custom-container mx-auto px-4'>
+				<div className='wrapper grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 items-start'>
+					{/* Контакты */}
+					<motion.div variants={childVariants} className='space-y-6'>
+						<h3 className='font-bold text-xl tracking-tight text-primeColor'>
+							Contact
+						</h3>
+						<address className='not-italic'>
+							<ul className='space-y-2'>
 								{ADDRESS.map(item => (
-									<li key={item.name} className="mb-2 last:mb-0">
+									<li key={item.name}>
 										{item.name === 'email' ? (
 											<Link
 												href={item.href}
-												target="_blank"
-												rel="noopener nofollow noreferrer"
-												className="font-semibold text-sm tracking-extra-tight text-secondTextColor not-italic link-hover"
+												target='_blank'
+												rel='noopener nofollow noreferrer'
+												className='font-semibold text-sm tracking-tight text-secondTextColor hover:text-accentColor transition-colors duration-200'
+												aria-label={`Send email to ${item.description}`}
 											>
-												{item.descr}
+												{item.description}
 											</Link>
 										) : (
 											<Link
 												href={item.href}
-												className="font-semibold text-sm tracking-extra-tight text-secondTextColor not-italic link-hover"
+												className='font-semibold text-sm tracking-tight text-secondTextColor hover:text-accentColor transition-colors duration-200'
+												aria-label={item.description}
 											>
-												{item.descr}
+												{item.description}
 											</Link>
 										)}
 									</li>
 								))}
 							</ul>
 						</address>
-					</div>
-					{/* social links */}
-					<SocialLinkList />
-					{/* Get in touch btn */}
-					<div>
-						<Button isLink href="/contact">
-							Get In Touch
-						</Button>
+					</motion.div>
+
+					{/* Социальные ссылки */}
+					<motion.div
+						variants={childVariants}
+						className='flex justify-end xl:justify-center'
+					>
+						<SocialLinkList />
+					</motion.div>
+
+					{/* Кнопка Get In Touch */}
+					<div className='flex max-xl:col-span-2 justify-center xl:justify-end'>
+						<ButtonCustom styles={{ minWidth: 165 }}>Get In Touch</ButtonCustom>
 					</div>
 				</div>
-			</div>
-		</footer>
-	);
-};
 
-export default Footer;
+				{/* Копирайт */}
+				<motion.div
+					variants={childVariants}
+					className='mt-12 pt-6 border-t border-gray-200/30 text-center text-sm text-secondTextColor'
+				>
+					<p>
+						&copy; {new Date().getFullYear()} VladZaver. All rights reserved.
+					</p>
+				</motion.div>
+			</div>
+		</motion.footer>
+	)
+}

@@ -1,40 +1,113 @@
 'use client'
-import useVerticalHeader from '@/hooks/useVerticalHeader'
-import { Link } from '@/i18n/routing'
-import LanguageSwitcher from './LanguageSwitcher'
-import { NAV_ITEMS } from './nav-items.data'
-import VerticalHeader from './VerticalHeader'
 
-const Header = () => {
-	const { headerRef, showVerticalHeader } = useVerticalHeader()
+import { VerticalHeader } from './vertical-header'
+import { LanguageSwitcher } from '../ui/language-switcher'
+import { NAV_ITEMS } from './nav-items.data'
+import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
+import { ButtonCustom } from '../ui/button-custom'
+import { AiFillPhone, AiOutlineDownload } from 'react-icons/ai'
+
+export const Header = () => {
+	const [scrolled, setScrolled] = useState(false)
+
+	useEffect(() => {
+		const onScroll = () => setScrolled(window.scrollY > 10)
+		window.addEventListener('scroll', onScroll)
+		return () => window.removeEventListener('scroll', onScroll)
+	}, [])
+
+	const handleScrollToSection = (
+		sectionId: string,
+		event: React.MouseEvent<HTMLAnchorElement>
+	) => {
+		event.preventDefault()
+		const section = document.getElementById(sectionId)
+		if (section) {
+			section.scrollIntoView({ behavior: 'smooth' })
+			// Обновляем URL без перезагрузки
+			window.history.pushState(null, '', `#${sectionId}`)
+		}
+	}
+
 	return (
-		<>
-			<header ref={headerRef} className='bg-secondBgColor shadow-custom'>
-				<div className='container'>
-					<div className='wrapper flex justify-between items-center py-8'>
-						<div>VZ</div>
-						<LanguageSwitcher />
-						<nav className='w-[473px] '>
-							<ul className='flex justify-between items-center'>
-								{NAV_ITEMS.map((item, index) => (
-									<li key={index}>
-										<Link
-											href={item.link}
-											className='relative font-semibold text-[15px] text-primeColor tracking-extra-tight header-link-hover'
-										>
-											{item.name}
-										</Link>
-									</li>
-								))}
-							</ul>
+		<AnimatePresence>
+			<motion.header
+				initial={{ y: -60, opacity: 0 }}
+				animate={{ y: 0, opacity: 1 }}
+				exit={{ y: -60, opacity: 0 }}
+				transition={{ duration: 0.6, ease: 'easeOut' }}
+				className={`fixed top-0 left-0 w-full z-50 transition-all h-14 lg:h-20 ${
+					scrolled
+						? 'backdrop-blur-md bg-darkBgColor/50 shadow-sm'
+						: 'bg-transparent'
+				}`}
+			>
+				<div className='w-full px-4 md:px-6 lg:container lg:mx-auto h-full'>
+					<div className='lg:max-w-4xl lg:mx-auto flex justify-between items-center h-full'>
+						<Link
+							href='#home'
+							onClick={e => handleScrollToSection('home', e)}
+							className='text-xl font-bold font-montserrat text-primeColor hover:text-accentColor transition-colors duration-300 tracking-tight'
+							aria-label='Go to Home section'
+						>
+							{'<VladZaver />'}
+						</Link>
+						<nav className='hidden lg:flex'>
+							{NAV_ITEMS.map((item, index) => (
+								<Link
+									key={index}
+									href={`#${item.link}`}
+									onClick={e => handleScrollToSection(item.link, e)}
+									className='font-medium text-sm text-primeColor hover:text-accentColor hover:bg-cardBgColor transition-colors duration-300 h-20 w-28 flex items-center justify-center'
+									aria-label={`Go to ${item.name} section`}
+								>
+									{item.name}
+								</Link>
+							))}
 						</nav>
+						<div className='lg:hidden flex ml-auto'>
+							<>
+								<Link
+									href='#contacts'
+									onClick={e => handleScrollToSection('contacts', e)}
+									className='sm:hidden flex items-center justify-center p-3 rounded-xl bg-transparent text-white hover:bg-cardBgColor transition-colors duration-300 z-30 group'
+									aria-label='Go to Contacts section'
+								>
+									<AiFillPhone className='w-5 h-5 group-hover:text-accentColor transition-colors duration-300' />
+								</Link>
+								<Link
+									href='#contacts'
+									onClick={e => handleScrollToSection('contacts', e)}
+									className='max-sm:hidden font-medium text-sm text-primeColor hover:text-accentColor hover:bg-cardBgColor transition-colors duration-300 h-14 w-28 flex items-center justify-center'
+									aria-label='Go to Contacts section'
+								>
+									Get In Touch
+								</Link>
+							</>
+
+							<>
+								<button
+									className='sm:hidden flex items-center justify-center p-3 rounded-xl bg-transparent text-white hover:bg-cardBgColor transition-colors duration-300 z-30 group'
+									aria-label='Download CV'
+								>
+									<AiOutlineDownload className='w-5 h-5 group-hover:text-accentColor transition-colors duration-300' />
+								</button>
+								<button
+									className='max-sm:hidden font-medium text-sm text-primeColor hover:text-accentColor hover:bg-cardBgColor transition-colors duration-300 h-14 w-28 flex items-center justify-center'
+									aria-label='Download CV'
+								>
+									Download CV
+								</button>
+							</>
+						</div>
+						<LanguageSwitcher />
 					</div>
 				</div>
-			</header>
+			</motion.header>
 			{/* vertival header */}
-			{showVerticalHeader && <VerticalHeader />}
-		</>
+			<VerticalHeader />
+		</AnimatePresence>
 	)
 }
-
-export default Header

@@ -1,26 +1,23 @@
-// import { useTranslations } from 'next-intl'
+'use client'
 
-// export default function HomePage() {
-// 	const t = useTranslations('HomePage')
-// 	return (
-// 		<div>
-// 			<h1>{t('title')}</h1>
-// 		</div>
-// 	)
-// }
-
-import Experience from '@/components/Main/Experience/Experience'
-import Hero from '@/components/Main/Hero/Hero'
-import ProjectsPreview from '@/components/Main/ProjectsPreview/ProjectsPreview'
-import Skills from '@/components/Main/Skills/Skills'
+import { AboutSection } from '@/components/about/about-section'
+import { ContactsSection } from '@/components/contacts/contacts-section'
+import { Experience } from '@/components/experience/experience'
+import { Hero } from '@/components/hero/hero'
+import { Projects } from '@/components/projects/projects'
+import { Skills } from '@/components/skills/skills'
+import { MobileSectionNav } from '@/components/ui/mobile-section-nav'
 
 export default function Home() {
 	return (
-		<div className='section'>
+		<div id='home' className='section'>
 			<Hero />
+			<AboutSection />
 			<Skills />
-			<ProjectsPreview />
+			<Projects />
 			<Experience />
+			<ContactsSection />
+			<MobileSectionNav />
 		</div>
 	)
 }

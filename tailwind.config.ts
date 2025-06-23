@@ -19,15 +19,9 @@ const config: Config = {
 				secondColor: '#8491a0',
 				secondTextColor: '#c5c5c5',
 				secondBgColor: '#222222',
+				darkBgColor: '#374151',
 				cardBgColor: '#2a2a2a',
-				// darkMode
-				dPrimeColor: '#c8cbe7',
-				dSecondColor: '#5b5e7e',
-				// dSecondBgColor: '#222222',
-				dLineThroughColor: '#4d5067',
 				dBorderColor: '#393a4b',
-				dPrimeBgColor: '#171823',
-				dEditingBgColor: '#32CD32',
 			},
 			backgroundImage: {
 				'custom-gradient': 'linear-gradient(135deg, #55ddff 0%, #c058f3 100%)',
