@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl'
 import { getProjects } from './projects.data'
 import { TitleCustom } from '../ui/title-custom'
 
-export const Projects = () => {
+export const ProjectsSection = () => {
 	const [activeProjectId, setActiveProjectId] = useState<string | null>(null)
 
 	const t = useTranslations('Projects')
