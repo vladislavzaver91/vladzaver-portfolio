@@ -1,14 +1,14 @@
 'use client'
 
-import { VerticalHeader } from './vertical-header'
 import { LanguageSwitcher } from '../ui/language-switcher'
-import { getNavigation } from './nav-items.data'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { ButtonCustom } from '../ui/button-custom'
 import { AiFillPhone, AiOutlineDownload } from 'react-icons/ai'
 import { useTranslations } from 'next-intl'
+import { getNavigation } from './nav-items.data'
+import { VerticalHeader } from './vertical-header'
 
 export const Header = () => {
 	const t = useTranslations('Header')

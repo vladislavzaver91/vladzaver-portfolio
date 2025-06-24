@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { getNavigation } from './nav-items.data'
 import { useTranslations } from 'next-intl'
+import { getNavigation } from './nav-items.data'
 
 export const VerticalHeader = () => {
 	const t = useTranslations('Header')

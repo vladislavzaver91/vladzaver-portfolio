@@ -11,9 +11,9 @@ import { FullScreenModal } from '../ui/full-screen-modal'
 import { LuFullscreen } from 'react-icons/lu'
 import { IoCloseOutline } from 'react-icons/io5'
 import { useTranslations } from 'next-intl'
-import { getProjects } from './projects.data'
 import { useCloseModal } from '../../hooks/use-close-modal'
 import { SwiperPaginationService } from '../../services/swiper-pagination.service'
+import { getProjects } from './projects.data'
 
 export const ProjectItem = ({
 	id,

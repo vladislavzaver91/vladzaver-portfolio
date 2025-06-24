@@ -1,12 +1,12 @@
 'use client'
 
-import { ProjectsList } from './projects-list'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ProjectItem } from './project-item'
 import { useTranslations } from 'next-intl'
-import { getProjects } from './projects.data'
 import { TitleCustom } from '../ui/title-custom'
+import { getProjects } from './projects.data'
+import { ProjectsList } from './projects-list'
+import { ProjectItem } from './project-item'
 
 export const ProjectsSection = () => {
 	const [activeProjectId, setActiveProjectId] = useState<string | null>(null)
