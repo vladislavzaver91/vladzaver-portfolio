@@ -3,8 +3,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 export const About = () => {
+	const t = useTranslations('About')
+
 	return (
 		<div className='wrapper flex flex-col gap-5'>
 			<motion.div
@@ -14,18 +17,10 @@ export const About = () => {
 				className='flex max-lg:flex-col gap-5 w-full'
 			>
 				<h3 className='flex-1 font-extrabold text-3xl lg:text-5xl leading-[1.15] text-primeColor font-montserrat'>
-					I write code because I love it.
+					{t('sectionTitle')}
 				</h3>
 				<p className='flex-1 font-light text-base lg:text-lg text-secondColor  tracking-extra-tight'>
-					My name is Vladislav. I am a Junior Fullstack Developer with
-					commercial experience in freelance teams, where I contributed to
-					real-world projects such as CRMs, marketplaces, e-commerce platforms,
-					AI-powered Telegram apps, and adaptive landing pages. I write code
-					because it allows me to combine creativity, logic, and attention to
-					detail to solve real problems. Graduating from GoIT Academy's
-					Fullstack Development program laid my technical foundation. Today, I
-					continue to grow as a developer who enjoys solving challenges and
-					contributing to meaningful projects.
+					{t('description1')}
 				</p>
 			</motion.div>
 			<motion.div
@@ -36,16 +31,10 @@ export const About = () => {
 			>
 				<div className='flex-1'>
 					<p className='mb-4 font-light text-base lg:text-lg text-secondColor tracking-extra-tight'>
-						It is important for me to create clean and user-friendly code with
-						attention to detail. In the process, I always strive to find the
-						most effective solutions and remain open to new ideas. I'm sociable,
-						easy to get along with the team, and I don't stop learning - in my
-						free time I improve my skills and experiment with new technologies.
+						{t('description2')}
 					</p>
 					<p className='font-light text-base lg:text-lg text-secondColor tracking-extra-tight'>
-						I write code because it gives me pleasure and opens up new
-						opportunities. I want to develop as a front-end developer and am
-						constantly working on my professional growth.
+						{t('description3')}
 					</p>
 				</div>
 				<Link href='/' className='flex-1'>

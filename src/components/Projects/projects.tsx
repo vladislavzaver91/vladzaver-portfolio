@@ -1,15 +1,20 @@
 'use client'
 
-import { PROJECTS } from '@/components/projects/projects.data'
+import { getProjects } from '@/components/projects/projects.data'
 import { ButtonCustom } from '@/components/ui/button-custom'
 import { TitleCustom } from '@/components/ui/title-custom'
 import { ProjectsList } from './projects-list'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ProjectItem } from './project-item'
+import { useTranslations } from 'next-intl'
 
 export const Projects = () => {
 	const [activeProjectId, setActiveProjectId] = useState<string | null>(null)
+
+	const t = useTranslations('Projects')
+
+	const PROJECTS = getProjects(t)
 
 	return (
 		<div id='projects' className='section-component custom-container'>
@@ -26,7 +31,7 @@ export const Projects = () => {
 							backgroundClip: 'text',
 						}}
 					>
-						Projects
+						{t('title')}
 					</TitleCustom>
 				</motion.div>
 				<ProjectsList

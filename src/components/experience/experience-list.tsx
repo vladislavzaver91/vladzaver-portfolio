@@ -1,9 +1,14 @@
 'use client'
 
-import { EXPERIENCE } from './experience.data'
+import { useTranslations } from 'next-intl'
+import { getExperience } from './experience.data'
 import { motion } from 'framer-motion'
 
 export const ExperienceList = () => {
+	const t = useTranslations('Experience')
+
+	const EXPERIENCE = getExperience(t)
+
 	return (
 		<ul className='flex flex-col gap-12'>
 			{EXPERIENCE.map((item, index) => (

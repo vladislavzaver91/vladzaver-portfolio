@@ -8,6 +8,7 @@ import { RiArrowDownDoubleFill } from 'react-icons/ri'
 
 export const Hero = () => {
 	const t = useTranslations('Hero')
+	const tButtons = useTranslations('Buttons')
 
 	const handleScrollToAbout = () => {
 		const aboutSection = document.getElementById('about')
@@ -39,8 +40,8 @@ export const Hero = () => {
 					transition={{ duration: 0.6, ease: 'easeOut' }}
 					className='font-extrabold text-3xl lg:text-6xl leading-[1.15] text-primeColor font-montserrat text-center'
 				>
-					{t('VladislavZavertaylo')} <br />
-					<span className='gradient-text'>Front-end / Fullstack Developer</span>
+					{t('title')} <br />
+					<span className='gradient-text'>{t('position')}</span>
 				</motion.h1>
 				<motion.p
 					initial={{ opacity: 0, y: 20 }}
@@ -48,28 +49,24 @@ export const Hero = () => {
 					transition={{ delay: 0.3, duration: 0.5 }}
 					className='font-light text-base lg:text-lg text-secondColor  tracking-extra-tight text-center'
 				>
-					I'm a front-end developer with 1+ year of professional experience
-					specializing in responsive web projects. My experience includes
-					creating projects of varying complexity - from single-page landing
-					pages to multifunctional web applications and backend logic using
-					modern frameworks and technologies.
+					{t('description')}
 				</motion.p>
 				<div className='flex gap-5 max-sm:flex-col'>
 					<ButtonCustom
 						styles={{
-							minWidth: 165,
+							minWidth: 210,
 						}}
 						isLink
 						href='/contact'
 					>
-						Get In Touch
+						{tButtons('getInTouch')}
 					</ButtonCustom>
 					<ButtonCustom
 						styles={{
-							minWidth: 165,
+							minWidth: 210,
 						}}
 					>
-						Download CV
+						{tButtons('downloadCv')}
 					</ButtonCustom>
 				</div>
 

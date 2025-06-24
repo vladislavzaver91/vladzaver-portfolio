@@ -2,10 +2,15 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { NAV_ITEMS } from '@/components/header/nav-items.data'
+import { getNavigation } from '@/components/header/nav-items.data'
 import { IoChevronUp, IoChevronDown } from 'react-icons/io5'
+import { useTranslations } from 'next-intl'
 
 export const MobileSectionNav = () => {
+	const t = useTranslations('Header')
+
+	const NAV_ITEMS = getNavigation(t)
+
 	const [currentSection, setCurrentSection] = useState(NAV_ITEMS[0].link)
 	const [isVisible, setIsVisible] = useState(true)
 

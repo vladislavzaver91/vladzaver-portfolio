@@ -2,10 +2,14 @@
 import useContactForm from '@/hooks/useContactForm'
 import { ButtonCustom } from '../ui/button-custom'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 export const ContactForm = () => {
 	const { formData, sending, success, error, handleChange, handleSubmit } =
 		useContactForm()
+
+	const t = useTranslations('Contacts')
+	const tButtons = useTranslations('Buttons')
 
 	return (
 		<div className='flex-1'>
@@ -17,10 +21,10 @@ export const ContactForm = () => {
 				className='flex flex-col gap-8 lg:gap-12'
 			>
 				<label className='label group'>
-					<span className='label-text'>Name</span>
+					<span className='label-text'>{t('inputName.label')}</span>
 					<input
 						type='text'
-						placeholder='Your Name'
+						placeholder={t('inputName.placeholder')}
 						name='name'
 						value={formData.name}
 						onChange={handleChange}
@@ -28,10 +32,10 @@ export const ContactForm = () => {
 					/>
 				</label>
 				<label className='label group'>
-					<span className='label-text'>Email</span>
+					<span className='label-text'>{t('inputEmail.label')}</span>
 					<input
 						type='email'
-						placeholder='email@example.com'
+						placeholder={t('inputEmail.placeholder')}
 						name='email'
 						value={formData.email}
 						onChange={handleChange}
@@ -39,9 +43,9 @@ export const ContactForm = () => {
 					/>
 				</label>
 				<label className='label group'>
-					<span className='label-text'>Message</span>
+					<span className='label-text'>{t('textarea.label')}</span>
 					<textarea
-						placeholder='Enter text'
+						placeholder={t('textarea.placeholder')}
 						name='message'
 						value={formData.message}
 						onChange={handleChange}
@@ -49,7 +53,7 @@ export const ContactForm = () => {
 					></textarea>
 				</label>
 				<ButtonCustom typeBtn='submit' disabled={sending}>
-					{sending ? 'Sending...' : 'Send'}
+					{sending ? tButtons('sending') : tButtons('send')}
 				</ButtonCustom>
 			</motion.form>
 			{success && <p className='text-green-500'>Message sent successfully!</p>}

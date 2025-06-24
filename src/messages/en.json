@@ -1,0 +1,116 @@
+{
+	"Hero": {
+		"title": "Vladislav Zavertaylo",
+		"position": "Front-end / Full-stack Developer",
+		"description": "I'm a front-end developer with 1+ year of professional experience specializing in responsive web projects. My experience includes creating projects of varying complexity - from single-page landing pages to multifunctional web applications and backend logic using modern frameworks and technologies."
+	},
+	"About": {
+		"title": "About me",
+		"sectionTitle": "I write code because I love it.",
+		"description1": "My name is Vladislav. I am a Junior Full-stack Developer with commercial experience in freelance teams, where I contributed to real-world projects such as CRMs, marketplaces, e-commerce platforms, AI-powered Telegram apps, and adaptive landing pages. I write code because it allows me to combine creativity, logic, and attention to detail to solve real problems. Graduating from GoIT Academy's Full-stack Development program laid my technical foundation. Today, I continue to grow as a developer who enjoys solving challenges and contributing to meaningful projects.",
+		"description2": "It is important for me to create clean and user-friendly code with attention to detail. In the process, I always strive to find the most effective solutions and remain open to new ideas. I'm sociable, easy to get along with the team, and I don't stop learning - in my free time I improve my skills and experiment with new technologies.",
+		"description3": "I write code because it gives me pleasure and opens up new opportunities. I want to develop as a developer and am constantly working on my professional growth."
+	},
+	"Skills": {
+		"title": "Experience with"
+	},
+	"Projects": {
+		"title": "Projects",
+		"role": "Role",
+		"period": "Period",
+		"TypeOfProject": "Type of project",
+		"ngo": {
+			"title": "Website of an environmental NGO",
+			"description": "A multi-page website of a public organization for environmental protection and ecology. The project is commercial. Term of work in the project: more than half a year.",
+			"role": "Front-end developer",
+			"period": "May-Nov 2024",
+			"type": "Commercial project"
+		},
+		"marketplace": {
+			"title": "Classifieds & Auction Marketplace Web App",
+			"description": "Built a multilingual classifieds and auction platform with responsive design and dynamic features. • Designed and implemented backend logic: controllers, routes, CRUD operations for ads and user data, social login (Google, Facebook), currency conversion using Exchange Rate API. • Developed complete front-end with pixel-perfect adaptive layout based on design mockups. • Integrated multilingual support (three languages) with automatic currency selection based on chosen language/region, plus manual override; settings synced with user profile on the server. • Managed dynamic user experiences: different header behavior (authorization status, scroll, page type, screen size), conditional redirects (e.g. first visit, missing nickname). • Created mock data services for city lists across three countries, and ensured full multi-language support using AI-assisted data generation (Grok).",
+			"role": "Full-stack developer",
+			"period": "May 2025 - present",
+			"type": "Commercial project"
+		},
+		"luxuryCar": {
+			"title": "Luxury Car Interior E-commerce Website",
+			"description": "Developed a website for an online store specializing in luxury and high-end car interior solutions. • Built all front-end pages with responsive design and business logic implementation. • Integrated front-end logic with backend API using Axios (prepared service classes and request handlers), with temporary mock JSON data used during backend development. • Managed server data using Pinia as a state management solution. • Implemented dynamic price display logic: prices and discounts adjusted automatically based on user role (e.g., dealer-specific pricing, hidden prices for certain products).",
+			"role": "Front-end developer",
+			"period": "Apr-May 2025",
+			"type": "Commercial project"
+		},
+		"telegramApp": {
+			"title": "AI-Powered Nutrition Assistant — Telegram Web App",
+			"description": "Developed a Telegram-based nutrition assistant for mobile devices (up to 768px screens). • Designed and implemented backend logic including controllers, routes, and Telegram-based authentication. • Built a Telegram bot that guided users through their nutrition program, providing AI-powered advice. • Integrated AI (OpenAI) to generate nutrition plans based on user-provided data, analyze food photos for nutritional value, and create vitamin plans. • Developed all front-end pages: adaptive layout, UI logic, and API integration using Axios with Context API and React state for data management (no external state managers). • Delivered first-time solutions for Telegram authentication, Telegram bot creation, and AI integration.",
+			"role": "Full-stack developer",
+			"period": "Apr 2025",
+			"type": "Commercial project"
+		},
+		"crm": {
+			"title": "CRM Web Application for Water Delivery and Vending Machine Management",
+			"description": "Developed a CRM system for a city water delivery service and vending machine management. • Implemented all front-end pages including adaptive layout, business logic, and UI interactions. • Integrated backend APIs (Swagger-based) using Axios, with custom API service classes and React Context for global state, eliminating the need for external state managers. • Built role-based authentication system supporting 5 distinct user roles, with role-specific access and functionality as required by the client. • Handled large datasets for machine configuration settings, integrating dynamic server data into front-end interfaces. • Designed and implemented data visualization features (financial metrics, reports, consumption stats) using tables, charts, and graphs.",
+			"role": "Front-end developer",
+			"period": "Feb-Apr 2025",
+			"type": "Commercial project"
+		},
+		"landing": {
+			"title": "Multi-page Landing Website for a Kinesiology School",
+			"description": "Built a multi-page landing site for a kinesiology school, featuring course descriptions, seminar schedules, documentation, testimonials, photos, and videos. Developed all front-end pages with responsive design, delivering a clean and engaging user experience. • Displayed client-provided content (testimonials, documents, media, descriptions) with visually appealing design and smooth animations. • Implemented dynamic effects (sliders, parallax scrolling) to enhance interactivity while keeping the interface simple and accessible. • Designed and built seminar data presentation with tables and modal dialogs (including schedules, addresses, and program details).",
+			"role": "Front-end developer",
+			"period": "Mar 2025",
+			"type": "Commercial project"
+		}
+	},
+	"Experience": {
+		"title": "Experience",
+		"freelance": {
+			"title": "Full-stack / Front-end Developer at Remote (Freelance)",
+			"description": "Commercial experience as part of a freelance development team. Full-stack and front-end development of commercial web apps (CRM, marketplace, AI-powered Telegram app, e-commerce, and landing sites). Technologies: React, Next.js, Vue3, TypeScript, Node.js, Express, Tailwind CSS, Prisma, Supabase, JWT, OpenAI API, and more.Responsible for front-end logic, adaptive UI, backend integration, social auth, multilingual support, and role-based access.",
+			"period": "May 2024 — Present"
+		},
+		"auditor": {
+			"title": "Auditor of inventory items in a supermarket chain",
+			"description": "Control at the stage of procurement of inventory items in the retail trade; Constant monitoring of backup equipment, as well as coordination of the feasibility of new purchases; Regular analysis of the company`s financial costs for the purchase of new equipment; Control over compliance with the rules of work with inventory items in the outlets of the network.",
+			"period": "Jun 2019 - Present"
+		}
+	},
+	"Contacts": {
+		"title": "Get In Touch With Me",
+		"submitSuccess": "Message sent successfully!",
+		"submitError": "Something went wrong. Please try again later.",
+		"inputName": {
+			"label": "Name",
+			"placeholder": "Your Name"
+		},
+		"inputEmail": {
+			"label": "Email",
+			"placeholder": "email@example.com"
+		},
+		"textarea": {
+			"label": "Message",
+			"placeholder": "Enter text"
+		}
+	},
+	"Header": {
+		"home": "Home",
+		"about": "About",
+		"projects": "Projects",
+		"experience": "Experience",
+		"contacts": "Contacts"
+	},
+	"Footer": {
+		"title": "Contacts",
+		"contacts": {
+			"place": "Kyiv, Ukraine",
+			"email": "vladislavzaver91@gmail.com"
+		},
+		"allRightsReserved": "All rights reserved"
+	},
+	"Buttons": {
+		"getInTouch": "Get In Touch",
+		"downloadCv": "Download CV",
+		"send": "Send",
+		"sending": "...Sending"
+	}
+}

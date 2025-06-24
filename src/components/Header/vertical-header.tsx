@@ -2,9 +2,14 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { NAV_ITEMS } from './nav-items.data'
+import { getNavigation } from './nav-items.data'
+import { useTranslations } from 'next-intl'
 
 export const VerticalHeader = () => {
+	const t = useTranslations('Header')
+
+	const NAV_ITEMS = getNavigation(t)
+
 	const navVariants = {
 		hidden: { opacity: 0, x: -20 },
 		visible: {
@@ -20,7 +25,7 @@ export const VerticalHeader = () => {
 
 	const itemVariants = {
 		hidden: { opacity: 0, x: -20 },
-		visible: { opacity: 1, x: 0 },
+		visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.3 } },
 	}
 
 	const handleScrollToSection = (
@@ -47,10 +52,14 @@ export const VerticalHeader = () => {
 					<Link
 						href={`#${item.link}`}
 						onClick={e => handleScrollToSection(item.link, e)}
-						className='flex items-center justify-center p-3 rounded-xl backdrop-blur-md bg-darkBgColor/50 shadow-sm text-white hover:bg-cardBgColor transition-colors duration-300 z-30 group'
+						className='flex items-center justify-center p-3 rounded-xl backdrop-blur-md bg-darkBgColor/50 shadow-sm text-white hover:bg-cardBgColor transition-colors duration-300 z-30 relative group'
 						aria-label={`Go to ${item.name} section`}
 					>
 						<item.icon className='w-6 h-6 group-hover:text-accentColor transition-colors duration-300' />
+						{/* Tooltip */}
+						<span className='absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 text-xs text-white bg-gray-800 rounded shadow-md whitespace-nowrap'>
+							{item.name}
+						</span>
 					</Link>
 				</motion.div>
 			))}

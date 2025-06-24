@@ -1,9 +1,12 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { ContactForm } from './contact-form'
 import { motion } from 'framer-motion'
 
 export const ContactsSection = () => {
+	const t = useTranslations('Contacts')
+
 	return (
 		<div id='contacts' className='section-component custom-container'>
 			<div className='wrapper'>
@@ -14,7 +17,7 @@ export const ContactsSection = () => {
 						transition={{ duration: 0.6, ease: 'easeOut' }}
 						className='flex-1 font-extrabold text-3xl lg:text-5xl leading-[1.15] text-primeColor font-montserrat'
 					>
-						Get In Touch With Me
+						{t('title')}
 					</motion.h3>
 					<ContactForm />
 				</div>

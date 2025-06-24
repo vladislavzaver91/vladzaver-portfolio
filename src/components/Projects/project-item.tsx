@@ -1,6 +1,6 @@
 'use client'
 
-import { PROJECTS } from '@/components/projects/projects.data'
+import { getProjects } from '@/components/projects/projects.data'
 import { useCloseModal } from '@/hooks/use-close-modal'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -13,6 +13,7 @@ import { SkeletonImage } from '../ui/skeleton-image'
 import { FullScreenModal } from '../ui/full-screen-modal'
 import { LuFullscreen } from 'react-icons/lu'
 import { IoCloseOutline } from 'react-icons/io5'
+import { useTranslations } from 'next-intl'
 
 export const ProjectItem = ({
 	id,
@@ -21,6 +22,9 @@ export const ProjectItem = ({
 	id: string
 	onClose: () => void
 }) => {
+	const t = useTranslations('Projects')
+
+	const PROJECTS = getProjects(t)
 	const project = PROJECTS.find(p => p.id === id)
 
 	const [isFullScreen, setIsFullScreen] = useState(false)
@@ -121,17 +125,17 @@ export const ProjectItem = ({
 							{project.description}
 						</p>
 						<p className='text-secondColor tracking-wide text-base'>
-							<span className='font-semibold'>Role: </span>
+							<span className='font-semibold'>{t('role')}: </span>
 							{project.role}
 						</p>
 						<p className='text-secondColor tracking-wide text-base'>
-							<span className='font-semibold'>Year of completion: </span>
+							<span className='font-semibold'>{t('period')}: </span>
 							{project.period}
 						</p>
 					</div>
 					<div className='lg:col-span-1 space-y-4'>
 						<p className='text-secondColor tracking-wide text-base'>
-							<span className='font-semibold'>Type of project: </span>
+							<span className='font-semibold'>{t('TypeOfProject')}: </span>
 							{project.type}
 						</p>
 						<div className='flex flex-wrap gap-2'>

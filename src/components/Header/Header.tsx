@@ -2,14 +2,20 @@
 
 import { VerticalHeader } from './vertical-header'
 import { LanguageSwitcher } from '../ui/language-switcher'
-import { NAV_ITEMS } from './nav-items.data'
+import { getNavigation } from './nav-items.data'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { ButtonCustom } from '../ui/button-custom'
 import { AiFillPhone, AiOutlineDownload } from 'react-icons/ai'
+import { useTranslations } from 'next-intl'
 
 export const Header = () => {
+	const t = useTranslations('Header')
+	const tButtons = useTranslations('Buttons')
+
+	const NAV_ITEMS = getNavigation(t)
+
 	const [scrolled, setScrolled] = useState(false)
 
 	useEffect(() => {
@@ -80,10 +86,11 @@ export const Header = () => {
 								<Link
 									href='#contacts'
 									onClick={e => handleScrollToSection('contacts', e)}
-									className='max-sm:hidden font-medium text-sm text-primeColor hover:text-accentColor hover:bg-cardBgColor transition-colors duration-300 h-14 w-28 flex items-center justify-center'
+									className='max-sm:hidden font-medium text-sm text-primeColor hover:text-accentColor hover:bg-cardBgColor transition-colors duration-300 h-14 max-w-full px-2 flex items-center gap-2'
 									aria-label='Go to Contacts section'
 								>
-									Get In Touch
+									{tButtons('getInTouch')}
+									<AiFillPhone className='w-4 h-4 group-hover:text-accentColor transition-colors duration-300' />
 								</Link>
 							</>
 
@@ -95,10 +102,11 @@ export const Header = () => {
 									<AiOutlineDownload className='w-5 h-5 group-hover:text-accentColor transition-colors duration-300' />
 								</button>
 								<button
-									className='max-sm:hidden font-medium text-sm text-primeColor hover:text-accentColor hover:bg-cardBgColor transition-colors duration-300 h-14 w-28 flex items-center justify-center'
+									className='max-sm:hidden font-medium text-sm text-primeColor hover:text-accentColor hover:bg-cardBgColor transition-colors duration-300 h-14 max-w-full px-2 flex items-center gap-2'
 									aria-label='Download CV'
 								>
-									Download CV
+									{tButtons('downloadCv')}
+									<AiOutlineDownload className='w-4 h-4 group-hover:text-accentColor transition-colors duration-300' />
 								</button>
 							</>
 						</div>

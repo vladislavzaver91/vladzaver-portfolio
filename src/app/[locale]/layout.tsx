@@ -1,8 +1,7 @@
 import { routing } from '@/i18n/routing'
 import { AnimatePresence } from 'framer-motion'
 import type { Metadata } from 'next'
-import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { Montserrat_Alternates, Rubik } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import './globals.css'
@@ -26,20 +25,26 @@ export const metadata: Metadata = {
 
 interface RootLayoutProps {
 	children: React.ReactNode
-	params: {
+	params: Promise<{
 		locale: string
-	}
+	}>
 }
 
 export default async function RootLayout({
 	children,
-	params: { locale },
+	params,
 }: RootLayoutProps) {
-	if (!routing.locales.includes(locale as any)) {
+	const { locale } = await params
+	if (!hasLocale(routing.locales, locale)) {
 		notFound()
 	}
 
-	const messages = await getMessages()
+	let messages
+	try {
+		messages = (await import(`../../messages/${locale}.json`)).default
+	} catch (error) {
+		notFound()
+	}
 
 	return (
 		<html lang={locale}>
