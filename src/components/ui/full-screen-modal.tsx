@@ -7,10 +7,10 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { SwiperPaginationService } from '@/services/swiper-pagination.service'
 import { SkeletonImage } from './skeleton-image'
 import { IoCloseOutline } from 'react-icons/io5'
-import { useCloseModal } from '@/hooks/use-close-modal'
+import { useCloseModal } from '../../hooks/use-close-modal'
+import { SwiperPaginationService } from '../../services/swiper-pagination.service'
 
 interface FullScreenModalProps {
 	isOpen: boolean

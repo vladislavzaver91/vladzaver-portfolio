@@ -1,13 +1,12 @@
 'use client'
 
-import { getProjects } from '@/components/projects/projects.data'
-import { ButtonCustom } from '@/components/ui/button-custom'
-import { TitleCustom } from '@/components/ui/title-custom'
 import { ProjectsList } from './projects-list'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ProjectItem } from './project-item'
 import { useTranslations } from 'next-intl'
+import { getProjects } from './projects.data'
+import { TitleCustom } from '../ui/title-custom'
 
 export const Projects = () => {
 	const [activeProjectId, setActiveProjectId] = useState<string | null>(null)

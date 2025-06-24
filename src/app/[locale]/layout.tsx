@@ -1,12 +1,12 @@
-import { routing } from '@/i18n/routing'
 import { AnimatePresence } from 'framer-motion'
 import type { Metadata } from 'next'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { Montserrat_Alternates, Rubik } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import './globals.css'
-import { Header } from '@/components/header/header'
-import { Footer } from '@/components/footer/footer'
+import { routing } from '../../i18n/routing'
+import { Header } from '../../components/header/header'
+import { Footer } from '../../components/footer/footer'
 
 const montserrat = Montserrat_Alternates({
 	weight: ['600', '800'],

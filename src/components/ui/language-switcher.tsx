@@ -1,12 +1,12 @@
 'use client'
 
-import { LanguageOption } from '@/types/types'
 import { useLocale } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState, useTransition } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IoChevronDown } from 'react-icons/io5'
 import Image from 'next/image'
+import { LanguageOption } from '../../types/types'
 
 const LANGUAGES: LanguageOption[] = [
 	{ code: 'en', name: 'English', flag: '/flags/en.png' },

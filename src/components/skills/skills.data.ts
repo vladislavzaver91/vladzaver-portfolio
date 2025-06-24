@@ -1,4 +1,4 @@
-import { SkillIcons } from '@/types/types'
+import { SkillIcons } from '../../types/types'
 
 export const SKILL_ICONS: SkillIcons[] = [
 	{ src: '/skill-icons/HTML5.svg', name: 'HTML5' },

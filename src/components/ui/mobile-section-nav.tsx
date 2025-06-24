@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { getNavigation } from '@/components/header/nav-items.data'
 import { IoChevronUp, IoChevronDown } from 'react-icons/io5'
 import { useTranslations } from 'next-intl'
+import { getNavigation } from '../header/nav-items.data'
 
 export const MobileSectionNav = () => {
 	const t = useTranslations('Header')

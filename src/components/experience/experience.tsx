@@ -1,9 +1,9 @@
 'use client'
 
-import { TitleCustom } from '@/components/ui/title-custom'
 import { ExperienceList } from './experience-list'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import { TitleCustom } from '../ui/title-custom'
 
 export const Experience = () => {
 	const t = useTranslations('Experience')

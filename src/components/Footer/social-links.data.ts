@@ -1,5 +1,5 @@
-import { SocialLinks } from '@/types/types'
 import { FaTelegramPlane, FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import { SocialLinks } from '../../types/types'
 
 export const SOCIAL_LINKS: SocialLinks[] = [
 	{

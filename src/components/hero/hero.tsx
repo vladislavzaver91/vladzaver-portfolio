@@ -1,10 +1,10 @@
 'use client'
 
-import { ButtonCustom } from '@/components/ui/button-custom'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { RiArrowDownDoubleFill } from 'react-icons/ri'
+import { ButtonCustom } from '../ui/button-custom'
 
 export const Hero = () => {
 	const t = useTranslations('Hero')

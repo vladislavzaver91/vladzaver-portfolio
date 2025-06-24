@@ -1,19 +1,19 @@
 'use client'
 
-import { getProjects } from '@/components/projects/projects.data'
-import { useCloseModal } from '@/hooks/use-close-modal'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { useState } from 'react'
-import { SwiperPaginationService } from '@/services/swiper-pagination.service'
 import { SkeletonImage } from '../ui/skeleton-image'
 import { FullScreenModal } from '../ui/full-screen-modal'
 import { LuFullscreen } from 'react-icons/lu'
 import { IoCloseOutline } from 'react-icons/io5'
 import { useTranslations } from 'next-intl'
+import { getProjects } from './projects.data'
+import { useCloseModal } from '../../hooks/use-close-modal'
+import { SwiperPaginationService } from '../../services/swiper-pagination.service'
 
 export const ProjectItem = ({
 	id,

@@ -1,8 +1,8 @@
 'use client'
 
-import { ProjectItems } from '@/types/types'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { ProjectItems } from '../../types/types'
 
 export const ProjectsList = ({
 	projects,

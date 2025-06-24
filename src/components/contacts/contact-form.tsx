@@ -1,8 +1,9 @@
 'use client'
-import useContactForm from '@/hooks/useContactForm'
+
 import { ButtonCustom } from '../ui/button-custom'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import useContactForm from '../../hooks/useContactForm'
 
 export const ContactForm = () => {
 	const { formData, sending, success, error, handleChange, handleSubmit } =

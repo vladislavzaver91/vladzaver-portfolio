@@ -1,6 +1,5 @@
 'use client'
 
-import { NavItems } from '@/types/types'
 import { useTranslations } from 'next-intl'
 import {
 	AiFillHome,
@@ -9,6 +8,7 @@ import {
 	AiFillPhone,
 } from 'react-icons/ai'
 import { MdWorkHistory } from 'react-icons/md'
+import { NavItems } from '../../types/types'
 
 export const getNavigation = (
 	t: ReturnType<typeof useTranslations>
