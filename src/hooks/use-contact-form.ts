@@ -58,5 +58,7 @@ export function useContactForm() {
 		error,
 		handleChange,
 		handleSubmit,
+		setSuccess,
+		setError,
 	}
 }

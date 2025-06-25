@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react'
 
-const DEFAULT_RESUME = '/resumes/resume_en.pdf'
+const DEFAULT_RESUME = '/resumes/Zavertaylo_Vladislav_Fullstack_developer.pdf'
 
 export function useDownloadResume() {
 	const [isDownloading, setIsDownloading] = useState<boolean>(false)

@@ -4,13 +4,36 @@ import { ButtonCustom } from '../ui/button-custom'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { useContactForm } from '../../hooks/use-contact-form'
+import { Loader } from '../ui/loader'
+import { useEffect } from 'react'
 
 export const ContactForm = () => {
-	const { formData, sending, success, error, handleChange, handleSubmit } =
-		useContactForm()
+	const {
+		formData,
+		sending,
+		success,
+		error,
+		setError,
+		setSuccess,
+		handleChange,
+		handleSubmit,
+	} = useContactForm()
 
 	const t = useTranslations('Contacts')
 	const tButtons = useTranslations('Buttons')
+
+	useEffect(() => {
+		let timer: NodeJS.Timeout
+
+		if (success || error) {
+			timer = setTimeout(() => {
+				setSuccess(false)
+				setError(false)
+			}, 4000)
+		}
+
+		return () => clearTimeout(timer)
+	}, [success, error, setSuccess, setError])
 
 	return (
 		<div className='flex-1'>
@@ -54,11 +77,30 @@ export const ContactForm = () => {
 					></textarea>
 				</label>
 				<ButtonCustom typeBtn='submit' disabled={sending}>
-					{sending ? tButtons('sending') : tButtons('send')}
+					{sending ? <Loader /> : tButtons('send')}
 				</ButtonCustom>
 			</motion.form>
-			{success && <p className='text-green-500'>{t('submitSuccess')}</p>}
-			{error && <p className='text-red-500'>{t('submitError')}</p>}
+
+			{success && (
+				<motion.p
+					initial={{ opacity: 0, y: 10 }}
+					animate={{ opacity: 1, y: 0 }}
+					exit={{ opacity: 0, y: 10 }}
+					className='text-green-500 mt-4'
+				>
+					{t('submitSuccess')}
+				</motion.p>
+			)}
+			{error && (
+				<motion.p
+					initial={{ opacity: 0, y: 10 }}
+					animate={{ opacity: 1, y: 0 }}
+					exit={{ opacity: 0, y: 10 }}
+					className='text-red-500 mt-4'
+				>
+					{t('submitError')}
+				</motion.p>
+			)}
 		</div>
 	)
 }

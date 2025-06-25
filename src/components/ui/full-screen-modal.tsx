@@ -89,9 +89,9 @@ export const FullScreenModal = ({
 						</Swiper>
 						<button
 							onClick={onClose}
-							className='absolute bottom-6 left-1/2 -translate-x-1/2 p-2 rounded-xl bg-darkBgColor text-white hover:bg-cardBgColor transition-colors duration-300 z-30 group'
+							className='absolute bottom-6 left-1/2 -translate-x-1/2 p-2 rounded-xl bg-darkBgColor text-white hover:bg-cardBgColor focus:bg-cardBgColor hover:text-accentColor focus:text-accentColor transition-colors duration-300 z-30 group'
 						>
-							<IoCloseOutline className='w-6 h-6 group-hover:text-accentColor transition-colors duration-300' />
+							<IoCloseOutline className='w-6 h-6' />
 						</button>
 					</motion.div>
 				</motion.div>

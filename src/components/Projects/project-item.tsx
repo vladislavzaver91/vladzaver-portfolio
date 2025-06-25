@@ -125,9 +125,9 @@ export const ProjectItem = ({
 				{/* Кнопка закрытия */}
 				<button
 					onClick={onClose}
-					className='absolute top-4 right-4 p-2 rounded-xl bg-black/50 text-white hover:bg-black/70 transition-colors duration-300 z-30 group'
+					className='absolute top-4 right-4 p-2 rounded-xl bg-black/50 text-white hover:bg-black/70 focus:bg-black/70 hover:text-accentColor focus:text-accentColor transition-colors duration-300 z-30 group'
 				>
-					<IoCloseOutline className='w-6 h-6 group-hover:text-accentColor transition-colors duration-300' />
+					<IoCloseOutline className='w-6 h-6' />
 				</button>
 			</div>
 

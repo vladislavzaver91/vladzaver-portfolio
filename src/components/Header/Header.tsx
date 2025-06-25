@@ -82,25 +82,25 @@ export const Header = () => {
 								<Link
 									href='#contacts'
 									onClick={e => handleScrollToSection('contacts', e)}
-									className='sm:hidden flex items-center justify-center p-3 rounded-xl bg-transparent text-white hover:bg-cardBgColor transition-colors duration-300 z-30 group'
+									className='sm:hidden flex items-center justify-center p-3 rounded-xl bg-transparent text-white hover:bg-cardBgColor focus:bg-cardBgColor hover:text-accentColor focus:text-accentColor transition-colors duration-300 z-30 group'
 									aria-label='Go to Contacts section'
 								>
-									<AiFillPhone className='w-5 h-5 group-hover:text-accentColor transition-colors duration-300' />
+									<AiFillPhone className='w-5 h-5' />
 								</Link>
 								<Link
 									href='#contacts'
 									onClick={e => handleScrollToSection('contacts', e)}
-									className='max-sm:hidden font-medium text-sm text-primeColor hover:text-accentColor hover:bg-cardBgColor transition-colors duration-300 h-14 max-w-full px-2 flex items-center gap-2'
+									className='max-sm:hidden font-medium text-sm text-primeColor hover:text-accentColor focus:text-accentColor hover:bg-cardBgColor focus:bg-cardBgColor transition-colors duration-300 h-14 max-w-full px-2 flex items-center gap-2'
 									aria-label='Go to Contacts section'
 								>
 									{tButtons('getInTouch')}
-									<AiFillPhone className='w-4 h-4 group-hover:text-accentColor transition-colors duration-300' />
+									<AiFillPhone className='w-4 h-4' />
 								</Link>
 							</>
 
 							<>
 								<button
-									className='sm:hidden flex items-center justify-center p-3 rounded-xl bg-transparent text-white hover:bg-cardBgColor transition-colors duration-300 z-30 group'
+									className='sm:hidden flex items-center justify-center p-3 rounded-xl bg-transparent text-white hover:bg-cardBgColor focus:bg-cardBgColor hover:text-accentColor focus:text-accentColor transition-colors duration-300 z-30 group'
 									onClick={downloadResume}
 									aria-label={tButtons('downloadCv')}
 									disabled={isDownloading}
@@ -108,7 +108,7 @@ export const Header = () => {
 									{isDownloading ? (
 										<Loader />
 									) : (
-										<AiOutlineDownload className='w-5 h-5 group-hover:text-accentColor transition-colors duration-300' />
+										<AiOutlineDownload className='w-5 h-5' />
 									)}
 								</button>
 								<button
@@ -118,7 +118,7 @@ export const Header = () => {
 									disabled={isDownloading}
 								>
 									{isDownloading ? <Loader /> : tButtons('downloadCv')}
-									<AiOutlineDownload className='w-4 h-4 group-hover:text-accentColor transition-colors duration-300' />
+									<AiOutlineDownload className='w-4 h-4' />
 								</button>
 							</>
 						</div>
