@@ -9,6 +9,8 @@ import { AiFillPhone, AiOutlineDownload } from 'react-icons/ai'
 import { useTranslations } from 'next-intl'
 import { getNavigation } from './nav-items.data'
 import { VerticalHeader } from './vertical-header'
+import { useDownloadResume } from '../../hooks/use-download-resume'
+import { Loader } from '../ui/loader'
 
 export const Header = () => {
 	const t = useTranslations('Header')
@@ -17,6 +19,8 @@ export const Header = () => {
 	const NAV_ITEMS = getNavigation(t)
 
 	const [scrolled, setScrolled] = useState(false)
+
+	const { downloadResume, isDownloading } = useDownloadResume()
 
 	useEffect(() => {
 		const onScroll = () => setScrolled(window.scrollY > 10)
@@ -97,15 +101,23 @@ export const Header = () => {
 							<>
 								<button
 									className='sm:hidden flex items-center justify-center p-3 rounded-xl bg-transparent text-white hover:bg-cardBgColor transition-colors duration-300 z-30 group'
-									aria-label='Download CV'
+									onClick={downloadResume}
+									aria-label={tButtons('downloadCv')}
+									disabled={isDownloading}
 								>
-									<AiOutlineDownload className='w-5 h-5 group-hover:text-accentColor transition-colors duration-300' />
+									{isDownloading ? (
+										<Loader />
+									) : (
+										<AiOutlineDownload className='w-5 h-5 group-hover:text-accentColor transition-colors duration-300' />
+									)}
 								</button>
 								<button
 									className='max-sm:hidden font-medium text-sm text-primeColor hover:text-accentColor hover:bg-cardBgColor transition-colors duration-300 h-14 max-w-full px-2 flex items-center gap-2'
-									aria-label='Download CV'
+									onClick={downloadResume}
+									aria-label={tButtons('downloadCv')}
+									disabled={isDownloading}
 								>
-									{tButtons('downloadCv')}
+									{isDownloading ? <Loader /> : tButtons('downloadCv')}
 									<AiOutlineDownload className='w-4 h-4 group-hover:text-accentColor transition-colors duration-300' />
 								</button>
 							</>

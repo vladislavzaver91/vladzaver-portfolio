@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { SkeletonImage } from '../ui/skeleton-image'
 import { FullScreenModal } from '../ui/full-screen-modal'
 import { LuFullscreen } from 'react-icons/lu'
@@ -28,6 +28,7 @@ export const ProjectItem = ({
 	const project = PROJECTS.find(p => p.id === id)
 
 	const [isFullScreen, setIsFullScreen] = useState(false)
+	const [isDesktop, setIsDesktop] = useState(false)
 	const [initialSlide, setInitialSlide] = useState(1)
 	const [imagesLoaded, setImagesLoaded] = useState<boolean[]>(
 		new Array(project?.images.length || 3).fill(false)
@@ -38,12 +39,28 @@ export const ProjectItem = ({
 		isEnabled: !isFullScreen,
 	})
 
+	useEffect(() => {
+		const handleResize = () => {
+			setIsDesktop(window.innerWidth >= 768)
+		}
+		handleResize()
+		window.addEventListener('resize', handleResize)
+
+		return () => window.removeEventListener('resize', handleResize)
+	}, [])
+
 	const handleImageLoad = (index: number) => {
 		setImagesLoaded(prev => {
 			const newLoaded = [...prev]
 			newLoaded[index] = true
 			return newLoaded
 		})
+	}
+
+	const handleMobileFullscreenOpen = () => {
+		if (!isDesktop) {
+			setIsFullScreen(true)
+		}
 	}
 
 	if (!project) {
@@ -77,7 +94,7 @@ export const ProjectItem = ({
 					}}
 				>
 					{project.images.map((image, index) => (
-						<SwiperSlide key={index}>
+						<SwiperSlide key={index} onClick={handleMobileFullscreenOpen}>
 							<div className='relative w-full h-full'>
 								{!imagesLoaded[index] && (
 									<SkeletonImage className='rounded-lg' />

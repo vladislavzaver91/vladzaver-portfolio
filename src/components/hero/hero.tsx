@@ -5,10 +5,14 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { RiArrowDownDoubleFill } from 'react-icons/ri'
 import { ButtonCustom } from '../ui/button-custom'
+import { useDownloadResume } from '../../hooks/use-download-resume'
+import { Loader } from '../ui/loader'
 
 export const Hero = () => {
 	const t = useTranslations('Hero')
 	const tButtons = useTranslations('Buttons')
+
+	const { downloadResume, isDownloading } = useDownloadResume()
 
 	const handleScrollToAbout = () => {
 		const aboutSection = document.getElementById('about')
@@ -65,8 +69,11 @@ export const Hero = () => {
 						styles={{
 							minWidth: 210,
 						}}
+						onClick={downloadResume}
+						aria-label={tButtons('downloadCv')}
+						disabled={isDownloading}
 					>
-						{tButtons('downloadCv')}
+						{isDownloading ? <Loader /> : tButtons('downloadCv')}
 					</ButtonCustom>
 				</div>
 

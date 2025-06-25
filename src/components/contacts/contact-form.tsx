@@ -3,7 +3,7 @@
 import { ButtonCustom } from '../ui/button-custom'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
-import useContactForm from '../../hooks/useContactForm'
+import { useContactForm } from '../../hooks/use-contact-form'
 
 export const ContactForm = () => {
 	const { formData, sending, success, error, handleChange, handleSubmit } =
@@ -19,7 +19,7 @@ export const ContactForm = () => {
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ delay: 0.3, duration: 0.5 }}
 				onSubmit={handleSubmit}
-				className='flex flex-col gap-8 lg:gap-12'
+				className='flex flex-col gap-8 lg:gap-12 pb-4'
 			>
 				<label className='label group'>
 					<span className='label-text'>{t('inputName.label')}</span>
@@ -57,12 +57,8 @@ export const ContactForm = () => {
 					{sending ? tButtons('sending') : tButtons('send')}
 				</ButtonCustom>
 			</motion.form>
-			{success && <p className='text-green-500'>Message sent successfully!</p>}
-			{error && (
-				<p className='text-red-500'>
-					Something went wrong. Please try again later.
-				</p>
-			)}
+			{success && <p className='text-green-500'>{t('submitSuccess')}</p>}
+			{error && <p className='text-red-500'>{t('submitError')}</p>}
 		</div>
 	)
 }

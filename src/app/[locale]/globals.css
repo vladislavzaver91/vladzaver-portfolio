@@ -7,13 +7,6 @@
 	--foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
-}
-
 * {
 	margin: 0;
 	padding: 0;
@@ -25,8 +18,8 @@ html {
 }
 
 body {
-	color: var(--foreground);
-	background: var(--background);
+	color: var(--background);
+	background: var(--foreground);
 	font-family: 'Rubik', sans-serif;
 	overflow-x: hidden;
 }
@@ -174,13 +167,9 @@ nav.fixed {
 
 input:-webkit-autofill,
 textarea:-webkit-autofill {
-	box-shadow: 0 0 0 30px rgba(70, 90, 126, 0.4) inset !important;
-}
-
-input:-webkit-autofill {
-	-webkit-box-shadow: 0 0 0px 1000px #0a0a0a inset !important;
-	box-shadow: 0 0 0px 1000px white inset !important;
-	-webkit-text-fill-color: #000 !important;
+	-webkit-box-shadow: 0 0 0px 1000px #171717 inset !important;
+	box-shadow: 0 0 0px 1000px #171717 inset !important;
+	-webkit-text-fill-color: #c5c5c5 !important;
 	transition: background-color 9999s ease-in-out 0s;
 }
 
@@ -283,4 +272,44 @@ footer {
 	transition: all;
 
 	background: #5badff !important;
+}
+
+.loader-svg {
+	width: 4rem;
+	height: 4rem;
+	animation: rotatePulse 2s linear infinite;
+	transform-origin: center;
+	filter: drop-shadow(0 0 8px hsl(213, 100%, 70%)) blur(0.3px);
+}
+
+.loader-circle {
+	fill: none;
+	stroke: hsl(213, 100%, 70%); /* совпадает с accentColor */
+	stroke-width: 6;
+	stroke-linecap: round;
+	stroke-dasharray: 1, 200;
+	stroke-dashoffset: 0;
+	animation: dashGlow 1.6s ease-in-out infinite;
+}
+
+/* Анимация поворота */
+@keyframes rotatePulse {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Анимация штриха */
+@keyframes dashGlow {
+	0% {
+		stroke-dasharray: 1, 150;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -35px;
+	}
+	100% {
+		stroke-dashoffset: -125px;
+	}
 }

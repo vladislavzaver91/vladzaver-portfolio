@@ -63,6 +63,19 @@ export const MobileScrollProgressNav = () => {
 			const footer = document.getElementById('footer')
 			const currentScrollY = window.scrollY
 
+			if (footer) {
+				const rect = footer.getBoundingClientRect()
+				if (rect.top <= window.innerHeight) {
+					setIsNavVisible(false)
+					setIsScrollTopVisible(true)
+					clearTimeout(scrollTimeout)
+					setLastScrollY(currentScrollY)
+					return
+				} else {
+					setIsScrollTopVisible(false)
+				}
+			}
+
 			// Скрываем панель при скролле вниз, показываем при скролле вверх
 			if (currentScrollY > lastScrollY && currentScrollY > 100) {
 				setIsNavVisible(false)
@@ -73,16 +86,13 @@ export const MobileScrollProgressNav = () => {
 			// Показываем панель при остановке скролла
 			clearTimeout(scrollTimeout)
 			scrollTimeout = setTimeout(() => {
-				setIsNavVisible(true)
+				if (
+					footer &&
+					footer.getBoundingClientRect().top <= window.innerHeight
+				) {
+					return
+				}
 			}, 150)
-
-			// Показываем кнопку "Наверх" при достижении футера
-			if (footer) {
-				const rect = footer.getBoundingClientRect()
-				setIsScrollTopVisible(rect.top <= window.innerHeight)
-				// setIsNavVisible(rect.top > window.innerHeight)
-				// setIsScrollTopVisible(rect.top <= window.innerHeight)
-			}
 
 			setLastScrollY(currentScrollY)
 		}
@@ -92,7 +102,6 @@ export const MobileScrollProgressNav = () => {
 			window.removeEventListener('scroll', handleScroll)
 			clearTimeout(scrollTimeout)
 		}
-		// return () => window.removeEventListener('scroll', handleScroll)
 	}, [lastScrollY])
 
 	return (
@@ -113,10 +122,10 @@ export const MobileScrollProgressNav = () => {
 							onClick={() => scrollToSection(item.link)}
 							whileHover={{ scale: 1.2 }}
 							whileTap={{ scale: 0.9 }}
-							className={`p-1 rounded-full transition-colors duration-300 ${
+							className={`p-2 rounded-lg transition-colors duration-300 ${
 								currentSection === item.link
 									? 'bg-accentColor/20 text-accentColor'
-									: 'bg-primeColor/20 text-primeColor hover:bg-primeColor/50'
+									: 'bg-transparent text-primeColor focus:bg-accentColor/20'
 							}`}
 							aria-label={`Navigate to ${item.name} section`}
 							aria-current={currentSection === item.link ? 'page' : undefined}
@@ -145,7 +154,7 @@ export const MobileScrollProgressNav = () => {
 					onClick={() => scrollToSection('home')}
 					whileHover={{ scale: 1.2 }}
 					whileTap={{ scale: 0.9 }}
-					className='p-2 rounded-full backdrop-blur-md bg-darkBgColor/50 shadow-sm text-primeColor hover:bg-cardBgColor focus:bg-cardBgColor hover:text-accentColor focus:text-accentColor transition-colors duration-300'
+					className='p-2 rounded-lg backdrop-blur-md bg-darkBgColor/50 shadow-sm text-primeColor focus:bg-cardBgColor hover:text-accentColor focus:text-accentColor transition-colors duration-300'
 					aria-label='Scroll to top'
 				>
 					<IoChevronUp className='w-6 h-6' />
