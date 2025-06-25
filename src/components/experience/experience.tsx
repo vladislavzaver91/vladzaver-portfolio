@@ -9,7 +9,7 @@ export const Experience = () => {
 	const t = useTranslations('Experience')
 
 	return (
-		<div id='experience' className='section-component custom-container'>
+		<div className='section-component custom-container'>
 			<div className='wrapper'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}

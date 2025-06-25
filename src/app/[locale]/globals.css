@@ -110,7 +110,7 @@ nav.fixed {
 }
 
 .section {
-	padding: 60px 0px 60px 0px;
+	padding: 40px 0px 40px 0px;
 	@media screen and (min-width: 768px) {
 		padding: 80px 0px 60px 0px;
 	}

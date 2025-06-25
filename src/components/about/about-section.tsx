@@ -9,7 +9,7 @@ export const AboutSection = () => {
 	const t = useTranslations('About')
 
 	return (
-		<div id='about' className='section-component custom-container'>
+		<div className='section-component custom-container'>
 			<div className='wrapper'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}

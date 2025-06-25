@@ -16,7 +16,7 @@ export const ProjectsSection = () => {
 	const PROJECTS = getProjects(t)
 
 	return (
-		<div id='projects' className='section-component custom-container'>
+		<div className='section-component custom-container'>
 			<div className='wrapper'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -47,10 +47,14 @@ export const ProjectsSection = () => {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
+						transition={{ duration: 0.3 }}
 					>
 						<motion.div
 							className='bg-secondBgColor overflow-hidden max-w-[1024px] w-full m-4 max-h-[90vh] rounded-2xl shadow-lg'
-							layoutId={`project-${activeProjectId}`}
+							initial={{ scale: 0.8, opacity: 0 }}
+							animate={{ scale: 1, opacity: 1 }}
+							exit={{ scale: 0.8, opacity: 0 }}
+							transition={{ duration: 0.3 }}
 						>
 							<ProjectItem
 								id={activeProjectId}

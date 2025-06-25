@@ -8,7 +8,7 @@ export const ContactsSection = () => {
 	const t = useTranslations('Contacts')
 
 	return (
-		<div id='contacts' className='section-component custom-container'>
+		<div className='section-component custom-container'>
 			<div className='wrapper'>
 				<div className=' flex gap-4 md:gap-8 max-md:flex-col m w-full'>
 					<motion.h3
