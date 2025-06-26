@@ -118,5 +118,9 @@
 		"downloadCv": "Download CV",
 		"send": "Send",
 		"sending": "...Sending"
+	},
+	"Metadata": {
+		"title": "VladZaver Portfolio / Full-stack Developer",
+		"description": "Explore the portfolio of VladZaver, a full-stack developer skilled in Next.js, React, and modern web technologies."
 	}
 }

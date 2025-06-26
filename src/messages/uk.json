@@ -118,5 +118,9 @@
 		"downloadCv": "Скачати резюме",
 		"send": "Відправити",
 		"sending": "...Відправляється"
+	},
+	"Metadata": {
+		"title": "Портфоліо VladZaver / Full-stack Розробник",
+		"description": "Ознайомтеся з портфоліо VladZaver, full-stack розробника, який володіє Next.js, React та сучасними веб-технологіями."
 	}
 }

@@ -1,32 +1,62 @@
 'use client'
 
-import { AboutSection } from '../../components/about/about-section'
-import { ContactsSection } from '../../components/contacts/contacts-section'
-import { Experience } from '../../components/experience/experience'
-import { Hero } from '../../components/hero/hero'
-import { ProjectsSection } from '../../components/Projects/ProjectsSection'
-import { Skills } from '../../components/skills/skills'
+import dynamic from 'next/dynamic'
 import { MobileScrollProgressNav } from '../../components/ui/mobile-scroll-progress-nav'
+import Hero from '../../components/hero/hero'
+import AboutSection from '../../components/about/about-section'
+import Skills from '../../components/skills/skills'
+
+const ProjectsSection = dynamic(
+	() => import('../../components/Projects/ProjectsSection'),
+	{ ssr: false }
+)
+const Experience = dynamic(
+	() => import('../../components/experience/experience'),
+	{ ssr: false }
+)
+const ContactsSection = dynamic(
+	() => import('../../components/contacts/contacts-section'),
+	{ ssr: false }
+)
 
 export default function Home() {
 	return (
-		<div id='home' className='flex-1 overflow-x-hidden section'>
+		<main
+			id='home'
+			className='flex-1 overflow-x-hidden section'
+			aria-labelledby='hero-heading'
+		>
+			<h1 id='about-heading' className='sr-only'>
+				VladZaver
+			</h1>
 			<Hero />
-			<section id='about'>
+			<section id='about' aria-labelledby='about-heading'>
+				<h2 id='about-heading' className='sr-only'>
+					About VladZaver
+				</h2>
 				<AboutSection />
 				<Skills />
 			</section>
-			<section id='projects'>
+			<section id='projects' aria-labelledby='projects-heading'>
+				<h2 id='projects-heading' className='sr-only'>
+					Projects
+				</h2>
 				<ProjectsSection />
 			</section>
-			<section id='experience'>
+			<section id='experience' aria-labelledby='experience-heading'>
+				<h2 id='experience-heading' className='sr-only'>
+					Experience
+				</h2>
 				<Experience />
 			</section>
-			<section id='contacts'>
+			<section id='contacts' aria-labelledby='contacts-heading'>
+				<h2 id='contacts-heading' className='sr-only'>
+					Contact Me
+				</h2>
 				<ContactsSection />
 			</section>
 
 			<MobileScrollProgressNav />
-		</div>
+		</main>
 	)
 }

@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import { ContactForm } from './contact-form'
 import { motion } from 'framer-motion'
 
-export const ContactsSection = () => {
+const ContactsSection = () => {
 	const t = useTranslations('Contacts')
 
 	return (
@@ -25,3 +25,5 @@ export const ContactsSection = () => {
 		</div>
 	)
 }
+
+export default ContactsSection

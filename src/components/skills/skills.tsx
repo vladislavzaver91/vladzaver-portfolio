@@ -5,7 +5,7 @@ import { TitleCustom } from '../ui/title-custom'
 import { SkillIconList } from './skill-icon-list'
 import { motion } from 'framer-motion'
 
-export const Skills = () => {
+const Skills = () => {
 	const t = useTranslations('Skills')
 
 	return (
@@ -25,3 +25,5 @@ export const Skills = () => {
 		</div>
 	)
 }
+
+export default Skills

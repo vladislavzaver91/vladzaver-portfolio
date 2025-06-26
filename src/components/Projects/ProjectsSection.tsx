@@ -8,7 +8,7 @@ import { getProjects } from './projects.data'
 import { ProjectsList } from './projects-list'
 import { ProjectItem } from './project-item'
 
-export const ProjectsSection = () => {
+const ProjectsSection = () => {
 	const [activeProjectId, setActiveProjectId] = useState<string | null>(null)
 
 	const t = useTranslations('Projects')
@@ -67,3 +67,5 @@ export const ProjectsSection = () => {
 		</div>
 	)
 }
+
+export default ProjectsSection

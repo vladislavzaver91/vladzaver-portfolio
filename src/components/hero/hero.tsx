@@ -8,7 +8,7 @@ import { ButtonCustom } from '../ui/button-custom'
 import { useDownloadResume } from '../../hooks/use-download-resume'
 import { Loader } from '../ui/loader'
 
-export const Hero = () => {
+const Hero = () => {
 	const t = useTranslations('Hero')
 	const tButtons = useTranslations('Buttons')
 
@@ -89,3 +89,5 @@ export const Hero = () => {
 		</div>
 	)
 }
+
+export default Hero

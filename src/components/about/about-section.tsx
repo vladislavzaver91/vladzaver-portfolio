@@ -5,7 +5,7 @@ import { TitleCustom } from '../ui/title-custom'
 import { About } from './about'
 import { motion } from 'framer-motion'
 
-export const AboutSection = () => {
+const AboutSection = () => {
 	const t = useTranslations('About')
 
 	return (
@@ -23,3 +23,5 @@ export const AboutSection = () => {
 		</div>
 	)
 }
+
+export default AboutSection

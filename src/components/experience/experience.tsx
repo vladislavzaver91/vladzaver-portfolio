@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { TitleCustom } from '../ui/title-custom'
 
-export const Experience = () => {
+const Experience = () => {
 	const t = useTranslations('Experience')
 
 	return (
@@ -23,3 +23,5 @@ export const Experience = () => {
 		</div>
 	)
 }
+
+export default Experience
