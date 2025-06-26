@@ -111,7 +111,7 @@ export const MobileScrollProgressNav = () => {
 				initial={{ opacity: 0, x: 20 }}
 				animate={{ opacity: isNavVisible ? 1 : 0, x: isNavVisible ? 0 : 20 }}
 				transition={{ duration: 0.3, ease: 'easeOut' }}
-				className='fixed bottom-8 right-4 z-50 flex flex-col items-center gap-2 p-2 rounded-2xl backdrop-blur-md bg-gradient-to-b from-darkBgColor/30 to-darkBgColor/50 shadow-lg lg:hidden'
+				className='fixed bottom-8 right-4 z-40 flex flex-col items-center gap-2 p-2 rounded-2xl backdrop-blur-md bg-gradient-to-b from-darkBgColor/30 to-darkBgColor/50 shadow-lg lg:hidden'
 				aria-label='Mobile section navigation'
 			>
 				{NAV_ITEMS.map(item => {

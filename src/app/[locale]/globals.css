@@ -50,24 +50,33 @@ nav.fixed {
 	color: #161513;
 	background: #ffffff;
 	border-radius: 50px;
-	max-width: 155px;
+	max-width: 195px;
 	height: 58px;
-	padding: 0px 12px 0px 12px;
-	border: 1px solid #ffffff;
-
+	padding: 0 12px;
 	border: none;
 	transition: all 250ms ease-in-out;
-	&:hover,
+
 	&:focus {
 		background: #161513;
 		color: #ffffff;
 		border: 2px solid #ffffff;
 	}
 
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
 	@media screen and (min-width: 768px) {
 		font-size: 21px;
-		max-width: 195px;
+		max-width: 210px;
 		height: 64px;
+
+		&:hover {
+			background: #161513;
+			color: #ffffff;
+			border: 2px solid #ffffff;
+		}
 	}
 }
 
@@ -158,7 +167,7 @@ nav.fixed {
 }
 
 .label-text {
-	@apply h-6 transition-all duration-300 ease-in-out group-hover:text-accentColor group-focus-within:text-accentColor group-hover:text-sm group-focus-within:text-sm;
+	@apply h-6 transition-all duration-300 ease-in-out max-[360px]:text-sm group-hover:text-accentColor group-focus-within:text-accentColor max-[360px]:group-hover:text-[12px] max-[360px]:group-focus-within:text-[12px] group-hover:text-sm group-focus-within:text-sm;
 }
 
 .label-input {

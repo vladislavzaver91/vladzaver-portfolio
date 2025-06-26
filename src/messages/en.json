@@ -81,15 +81,21 @@
 		"submitError": "Something went wrong. Please try again later.",
 		"inputName": {
 			"label": "Name",
-			"placeholder": "Your Name"
+			"placeholder": "Your Name",
+			"errorMessage1": "Name is required",
+			"errorMessage2": "Name must be at least 2 characters"
 		},
 		"inputEmail": {
 			"label": "Email",
-			"placeholder": "email@example.com"
+			"placeholder": "email@example.com",
+			"errorMessage1": "Email is required",
+			"errorMessage2": "Please enter a valid email"
 		},
 		"textarea": {
 			"label": "Message",
-			"placeholder": "Enter text"
+			"placeholder": "Enter text",
+			"errorMessage1": "Message is required",
+			"errorMessage2": "Message must be at least 10 characters"
 		}
 	},
 	"Header": {

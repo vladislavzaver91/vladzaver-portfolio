@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { CSSProperties, ElementType } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 import { Loader } from './loader'
 
 interface ButtonCustomProps {
@@ -7,8 +7,10 @@ interface ButtonCustomProps {
 	typeBtn?: 'button' | 'submit' | 'reset'
 	disabled?: boolean
 	isLoading?: boolean
-	icon?: ElementType
+	icon?: ReactNode
+	iconPosition?: 'left' | 'right'
 	iconStyles?: string
+	className?: string
 	children: React.ReactNode
 	onClick?: () => void
 	isLink?: boolean
@@ -20,9 +22,11 @@ export const ButtonCustom = ({
 	typeBtn = 'button',
 	disabled = false,
 	isLoading = false,
-	icon: Icon,
+	icon,
+	iconPosition = 'left',
 	styles,
 	iconStyles,
+	className = '',
 	onClick,
 	isLink = false,
 	href = '#',
@@ -34,24 +38,17 @@ export const ButtonCustom = ({
 			type={typeBtn}
 			disabled={disabled || isLoading}
 			onClick={onClick}
-			style={{
-				...styles,
-			}}
-			className={`button ${
-				disabled || isLoading ? 'opacity-50 cursor-not-allowed' : ''
-			}
-        ${children && Icon ? 'pl-3' : ''}`}
-			aria-label={
-				ariaLabel || (typeof children === 'string' ? children : undefined)
-			}
-			aria-disabled={disabled || isLoading}
+			style={styles}
+			className={`button flex items-center justify-center gap-2 ${className}`}
+			aria-label={ariaLabel}
 		>
 			{isLoading ? (
 				<Loader />
 			) : (
 				<>
-					{Icon && <Icon className={`w-5 h-5 ${iconStyles}`} />}
+					{icon && iconPosition === 'left' && icon}
 					{children}
+					{icon && iconPosition === 'right' && icon}
 				</>
 			)}
 		</button>

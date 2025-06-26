@@ -1,76 +1,69 @@
 'use client'
 
-import { ChangeEvent, useState } from 'react'
-import { motion } from 'framer-motion'
-
+import { ChangeEvent, CSSProperties, forwardRef } from 'react'
 interface InputCustomProps {
-	label: string
-	placeholder?: string
+	type?: 'text' | 'email' | 'textarea'
 	name: string
 	value: string
 	onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
-	type?: 'text' | 'email' | 'textarea'
-	error?: boolean
-	errorMessage?: string
+	placeholder?: string
+	label: string
+	error?: string
 	className?: string
+	styles?: CSSProperties
 }
 
-export const InputCustom = ({
-	label,
-	placeholder,
-	name,
-	value,
-	onChange,
-	type = 'text',
-	error = false,
-	errorMessage,
-	className = '',
-}: InputCustomProps) => {
-	const [isFocused, setIsFocused] = useState(false)
+export const InputCustom = forwardRef<
+	HTMLInputElement | HTMLTextAreaElement,
+	InputCustomProps
+>(
+	(
+		{
+			type = 'text',
+			name,
+			value,
+			onChange,
+			placeholder,
+			label,
+			error,
+			className = '',
+			styles,
+		},
+		ref
+	) => {
+		const commonProps = {
+			name,
+			value,
+			onChange,
+			placeholder,
+			className: `label-input ${className} ${error ? 'border-red-500' : ''}`,
+			style: styles,
+		}
 
-	const commonClasses = `w-full px-4 py-2 rounded-lg bg-darkBgColor/50 text-primeColor placeholder-secondColor/50 focus:outline-none focus:ring-2 focus:ring-accentColor transition-all duration-300 ${className} ${
-		error ? 'border border-red-500' : 'border-none'
-	}`
-
-	const inputProps = {
-		name,
-		value,
-		onChange,
-		placeholder,
-		onFocus: () => setIsFocused(true),
-		onBlur: () => setIsFocused(false),
-		className: commonClasses,
-		'aria-invalid': error,
-		'aria-describedby': error && errorMessage ? `${name}-error` : undefined,
+		return (
+			<label className='label group relative pb-8'>
+				<span className='label-text'>{label}</span>
+				{type === 'textarea' ? (
+					<textarea
+						{...commonProps}
+						ref={ref as React.Ref<HTMLTextAreaElement>}
+						className={`${commonProps.className} resize-none min-h-32`}
+					/>
+				) : (
+					<input
+						{...commonProps}
+						type={type}
+						ref={ref as React.Ref<HTMLInputElement>}
+					/>
+				)}
+				{error && (
+					<span className='absolute -bottom-3 text-red-500 text-sm lowercase h-10'>
+						{error}
+					</span>
+				)}
+			</label>
+		)
 	}
+)
 
-	return (
-		<label className='flex flex-col gap-2 group'>
-			<span
-				className={`text-sm font-medium text-primeColor transition-all duration-300 ${
-					isFocused || value ? 'translate-y-0 opacity-100' : 'opacity-75'
-				}`}
-			>
-				{label}
-			</span>
-			{type === 'textarea' ? (
-				<textarea
-					{...inputProps}
-					className={`${commonClasses} resize-none min-h-32`}
-				/>
-			) : (
-				<input {...inputProps} type={type} />
-			)}
-			{error && errorMessage && (
-				<motion.p
-					initial={{ opacity: 0, y: 5 }}
-					animate={{ opacity: 1, y: 0 }}
-					className='text-red-500 text-sm mt-1'
-					id={`${name}-error`}
-				>
-					{errorMessage}
-				</motion.p>
-			)}
-		</label>
-	)
-}
+InputCustom.displayName = 'InputCustom'

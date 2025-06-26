@@ -82,7 +82,7 @@ export const Footer = () => {
 
 					{/* Кнопка Get In Touch */}
 					<div className='flex max-xl:col-span-2 justify-center xl:justify-end'>
-						<ButtonCustom styles={{ minWidth: 165 }}>
+						<ButtonCustom isLink href='#contacts' styles={{ minWidth: 165 }}>
 							{tButtons('getInTouch')}
 						</ButtonCustom>
 					</div>

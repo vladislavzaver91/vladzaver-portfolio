@@ -57,23 +57,21 @@ export const Hero = () => {
 				</motion.p>
 				<div className='flex gap-5 max-sm:flex-col'>
 					<ButtonCustom
-						styles={{
-							minWidth: 210,
-						}}
 						isLink
-						href='/contact'
+						href='#contacts'
+						styles={{ minWidth: 210 }}
+						ariaLabel={tButtons('getInTouch')}
 					>
 						{tButtons('getInTouch')}
 					</ButtonCustom>
 					<ButtonCustom
-						styles={{
-							minWidth: 210,
-						}}
+						styles={{ minWidth: 210 }}
 						onClick={downloadResume}
-						aria-label={tButtons('downloadCv')}
+						ariaLabel={tButtons('downloadCv')}
 						disabled={isDownloading}
+						isLoading={isDownloading}
 					>
-						{isDownloading ? <Loader /> : tButtons('downloadCv')}
+						{!isDownloading && tButtons('downloadCv')}
 					</ButtonCustom>
 				</div>
 

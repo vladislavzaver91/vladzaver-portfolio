@@ -81,15 +81,21 @@
 		"submitError": "Щось пішло не так. Будь ласка, спробуйте пізніше.",
 		"inputName": {
 			"label": "Ім'я",
-			"placeholder": "Ваше Ім'я"
+			"placeholder": "Ваше Ім'я",
+			"errorMessage1": "Ім'я обов'язкове",
+			"errorMessage2": "Ім'я повинно містити не менше 2 символів"
 		},
 		"inputEmail": {
 			"label": "Електронна пошта",
-			"placeholder": "email@example.com"
+			"placeholder": "email@example.com",
+			"errorMessage1": "Електронна пошта обов'язкова",
+			"errorMessage2": "Будь ласка, введіть дійсну електронну адресу"
 		},
 		"textarea": {
 			"label": "Повідомлення",
-			"placeholder": "Введіть текст"
+			"placeholder": "Введіть текст",
+			"errorMessage1": "Повідомлення обов'язкове",
+			"errorMessage2": "Повідомлення повинно містити не менше 10 символів"
 		}
 	},
 	"Header": {
