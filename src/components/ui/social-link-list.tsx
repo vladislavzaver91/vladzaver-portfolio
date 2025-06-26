@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { SOCIAL_LINKS } from './social-links.data'
+import { SOCIAL_LINKS } from '../../data/social-links.data'
 import { motion } from 'framer-motion'
 
 export const SocialLinkList = () => {

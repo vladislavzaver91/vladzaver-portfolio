@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { ExperienceItems } from '../../types/types'
+import { ExperienceItems } from '../types/types'
 
 export const getExperience = (
 	t: ReturnType<typeof useTranslations>

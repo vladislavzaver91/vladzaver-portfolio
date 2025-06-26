@@ -1,12 +1,12 @@
 'use client'
 
-import { ButtonCustom } from '../ui/button-custom'
+import { ButtonCustom } from './button-custom'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { useContactForm } from '../../hooks/use-contact-form'
-import { Loader } from '../ui/loader'
+import { Loader } from './loader'
 import { useEffect } from 'react'
-import { InputCustom } from '../ui/input-custom'
+import { InputCustom } from './input-custom'
 
 export const ContactForm = () => {
 	const {

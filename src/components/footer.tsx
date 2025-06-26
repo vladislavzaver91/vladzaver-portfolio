@@ -1,11 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import { SocialLinkList } from './social-link-list'
-import { ButtonCustom } from '../ui/button-custom'
-import { getAddress } from './address.data'
+import { SocialLinkList } from './ui/social-link-list'
+import { ButtonCustom } from './ui/button-custom'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
+import { getAddress } from '../data/address.data'
 
 export const Footer = () => {
 	const t = useTranslations('Footer')

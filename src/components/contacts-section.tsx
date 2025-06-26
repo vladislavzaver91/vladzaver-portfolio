@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { ContactForm } from './contact-form'
+import { ContactForm } from './ui/contact-form'
 import { motion } from 'framer-motion'
 
 const ContactsSection = () => {

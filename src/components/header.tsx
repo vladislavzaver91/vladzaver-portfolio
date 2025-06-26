@@ -1,16 +1,15 @@
 'use client'
 
-import { LanguageSwitcher } from '../ui/language-switcher'
+import { LanguageSwitcher } from './ui/language-switcher'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import { ButtonCustom } from '../ui/button-custom'
 import { AiFillPhone, AiOutlineDownload } from 'react-icons/ai'
 import { useTranslations } from 'next-intl'
-import { getNavigation } from './nav-items.data'
-import { VerticalHeader } from './vertical-header'
-import { useDownloadResume } from '../../hooks/use-download-resume'
-import { Loader } from '../ui/loader'
+import { getNavigation } from '../data/nav-items.data'
+import { VerticalHeader } from './ui/vertical-header'
+import { useDownloadResume } from '../hooks/use-download-resume'
+import { Loader } from './ui/loader'
 
 export const Header = () => {
 	const t = useTranslations('Header')

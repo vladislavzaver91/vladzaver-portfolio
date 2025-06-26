@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { AddressProps } from '../../types/types'
+import { AddressProps } from '../types/types'
 
 export const getAddress = (
 	t: ReturnType<typeof useTranslations>

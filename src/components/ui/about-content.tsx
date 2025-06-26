@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 
-export const About = () => {
+export const AboutContent = () => {
 	const t = useTranslations('About')
 
 	return (

@@ -1,11 +1,11 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { TitleCustom } from '../ui/title-custom'
-import { SkillIconList } from './skill-icon-list'
+import { TitleCustom } from './ui/title-custom'
 import { motion } from 'framer-motion'
+import { SkillIconList } from './ui/skill-icon-list'
 
-const Skills = () => {
+const SkillsSection = () => {
 	const t = useTranslations('Skills')
 
 	return (
@@ -26,4 +26,4 @@ const Skills = () => {
 	)
 }
 
-export default Skills
+export default SkillsSection

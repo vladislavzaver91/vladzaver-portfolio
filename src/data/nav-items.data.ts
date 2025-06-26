@@ -8,7 +8,7 @@ import {
 	AiOutlinePhone,
 } from 'react-icons/ai'
 import { MdOutlineWorkHistory } from 'react-icons/md'
-import { NavItems } from '../../types/types'
+import { NavItems } from '../types/types'
 
 export const getNavigation = (
 	t: ReturnType<typeof useTranslations>

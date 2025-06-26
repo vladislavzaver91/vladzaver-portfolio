@@ -1,11 +1,11 @@
 'use client'
 
-import { ExperienceList } from './experience-list'
+import { ExperienceList } from './ui/experience-list'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
-import { TitleCustom } from '../ui/title-custom'
+import { TitleCustom } from './ui/title-custom'
 
-const Experience = () => {
+const ExperienceSection = () => {
 	const t = useTranslations('Experience')
 
 	return (
@@ -24,4 +24,4 @@ const Experience = () => {
 	)
 }
 
-export default Experience
+export default ExperienceSection

@@ -1,9 +1,9 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { TitleCustom } from '../ui/title-custom'
-import { About } from './about'
+import { TitleCustom } from './ui/title-custom'
 import { motion } from 'framer-motion'
+import { AboutContent } from './ui/about-content'
 
 const AboutSection = () => {
 	const t = useTranslations('About')
@@ -18,7 +18,7 @@ const AboutSection = () => {
 				>
 					<TitleCustom mainTitle>{t('title')}</TitleCustom>
 				</motion.div>
-				<About />
+				<AboutContent />
 			</div>
 		</div>
 	)

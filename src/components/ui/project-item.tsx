@@ -6,14 +6,14 @@ import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { useEffect, useState } from 'react'
-import { SkeletonImage } from '../ui/skeleton-image'
-import { FullScreenModal } from '../ui/full-screen-modal'
+import { SkeletonImage } from './skeleton-image'
+import { FullScreenModal } from './full-screen-modal'
 import { LuFullscreen } from 'react-icons/lu'
 import { IoCloseOutline } from 'react-icons/io5'
 import { useTranslations } from 'next-intl'
 import { useCloseModal } from '../../hooks/use-close-modal'
 import { SwiperPaginationService } from '../../services/swiper-pagination.service'
-import { getProjects } from './projects.data'
+import { getProjects } from '../../data/projects.data'
 
 export const ProjectItem = ({
 	id,

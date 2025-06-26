@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { IoChevronUp } from 'react-icons/io5'
 import { useTranslations } from 'next-intl'
-import { getNavigation } from '../Header/nav-items.data'
+import { getNavigation } from '../../data/nav-items.data'
 
 // Компонент мобильной навигации с иконками
 export const MobileScrollProgressNav = () => {

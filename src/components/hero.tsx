@@ -4,9 +4,9 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { RiArrowDownDoubleFill } from 'react-icons/ri'
-import { ButtonCustom } from '../ui/button-custom'
-import { useDownloadResume } from '../../hooks/use-download-resume'
-import { Loader } from '../ui/loader'
+import { ButtonCustom } from './ui/button-custom'
+import { useDownloadResume } from '../hooks/use-download-resume'
+import { Loader } from './ui/loader'
 
 const Hero = () => {
 	const t = useTranslations('Hero')

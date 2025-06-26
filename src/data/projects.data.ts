@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { ProjectItems } from '../../types/types'
+import { ProjectItems } from '../types/types'
 
 export const getProjects = (
 	t: ReturnType<typeof useTranslations>

@@ -5,9 +5,9 @@ import { Montserrat_Alternates, Rubik } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import './globals.css'
 import { routing } from '../../i18n/routing'
-import { Header } from '../../components/Header/Header'
-import { Footer } from '../../components/Footer/Footer'
+import { Header } from '../../components/header'
 import { StructuredData } from '../../components/structured-data'
+import { Footer } from '../../components/footer'
 
 const montserrat = Montserrat_Alternates({
 	weight: ['600', '800'],

@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { getExperience } from './experience.data'
+import { getExperience } from '../../data/experience.data'
 import { motion } from 'framer-motion'
 
 export const ExperienceList = () => {
