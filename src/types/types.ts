@@ -58,3 +58,9 @@ export type LanguageOption = {
 	name: string
 	flag: string
 }
+
+export type Message = {
+	id: number
+	text: string
+	isBot: boolean
+}

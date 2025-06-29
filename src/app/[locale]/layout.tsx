@@ -129,7 +129,7 @@ export default async function RootLayout({
 			</head>
 			<body className={`${montserrat.className} ${rubik.className}`}>
 				<NextIntlClientProvider messages={messages}>
-					<AnimatePresence mode='wait' initial={false}>
+					<AnimatePresence mode='sync' initial={false}>
 						<Header />
 						{children}
 						<Footer />

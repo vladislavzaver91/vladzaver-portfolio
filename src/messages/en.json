@@ -113,6 +113,25 @@
 		},
 		"allRightsReserved": "All rights reserved"
 	},
+	"Chatbot": {
+		"greeting": "Hi! I'm your virtual assistant. Ask me about my projects or skills!",
+		"typing": "Typing...",
+		"projects": {
+			"ngo": "The NGO project is a multi-page website for an environmental protection organization. I worked as a Front-end developer from May to November 2024, creating a responsive and user-friendly interface for this commercial project.",
+			"marketplace": "In the Classifieds & Auction Marketplace project, I was a Full-stack developer from May 2025 to present. I built a multilingual platform with responsive design, backend logic (controllers, routes, CRUD), social login, and currency conversion. I also implemented dynamic front-end features and AI-assisted mock data.",
+			"luxuryCar": "The Luxury Car Interior E-commerce Website is an online store for high-end car interior solutions. I worked as a Front-end developer in April-May 2025, building responsive pages, integrating backend APIs with Axios, and managing server data with Pinia for dynamic price displays.",
+			"telegramApp": "The AI-Powered Nutrition Assistant is a Telegram web app for mobile devices. As a Full-stack developer in April 2025, I built backend logic, Telegram authentication, and integrated OpenAI for nutrition plans and food photo analysis, with a responsive front-end using React.",
+			"crm": "The CRM Web Application for water delivery and vending machine management was developed as a Front-end developer from February to April 2025. I implemented responsive layouts, integrated Swagger-based APIs with Axios, and created data visualization features with tables and charts.",
+			"landing": "The Multi-page Landing Website for a kinesiology school was developed as a Front-end developer in March 2025. I built responsive pages with dynamic effects like sliders and parallax scrolling, and presented seminar data with tables and modal dialogs.",
+			"experience": "I’ve worked on multiple commercial projects as a Front decorate-end and Full-stack developer, including e-commerce platforms, CRM systems, landing pages, and AI-powered apps. My recent projects include a marketplace web app and a Telegram-based nutrition assistant.",
+			"technologies": "I use a variety of technologies depending on the project, including React, Next.js, Tailwind CSS, Axios, Pinia, React Native, and OpenAI for AI integrations. For example, I used Next.js for the marketplace project and React Native for the Telegram nutrition assistant."
+		},
+		"unknown": [
+			"I’m not sure I understood your question. Could you clarify or ask about one of my projects?",
+			"Hmm, that’s a tricky one! Can you provide more details or ask about my work?",
+			"I didn’t quite catch that. Try asking about my projects or skills!"
+		]
+	},
 	"Buttons": {
 		"getInTouch": "Get In Touch",
 		"downloadCv": "Download CV",
