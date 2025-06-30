@@ -8,6 +8,7 @@ import { routing } from '../../i18n/routing'
 import { Header } from '../../components/header'
 import { StructuredData } from '../../components/structured-data'
 import { Footer } from '../../components/footer'
+import { BotAssistant } from '../../components/ui/bot-assistant'
 
 const montserrat = Montserrat_Alternates({
 	weight: ['600', '800'],

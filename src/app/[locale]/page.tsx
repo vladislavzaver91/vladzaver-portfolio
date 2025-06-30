@@ -5,8 +5,8 @@ import { MobileScrollProgressNav } from '../../components/ui/mobile-scroll-progr
 import Hero from '../../components/hero'
 import AboutSection from '../../components/about-section'
 import SkillsSection from '../../components/skills-section'
-import { BotAssistant } from '../../components/ui/bot-assistant'
 import { useMessages } from 'next-intl'
+import { BotAssistant } from '../../components/ui/bot-assistant'
 
 const ProjectsSection = dynamic(
 	() => import('../../components/projects-section'),

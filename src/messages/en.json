@@ -114,8 +114,13 @@
 		"allRightsReserved": "All rights reserved"
 	},
 	"Chatbot": {
+		"title": "Portfolio Assistant",
 		"greeting": "Hi! I'm your virtual assistant. Ask me about my projects or skills!",
 		"typing": "Typing...",
+		"fullScreen": "Full screen",
+		"close": "Close",
+		"send": "Send",
+		"scrollToDown": "To the last message",
 		"projects": {
 			"ngo": "The NGO project is a multi-page website for an environmental protection organization. I worked as a Front-end developer from May to November 2024, creating a responsive and user-friendly interface for this commercial project.",
 			"marketplace": "In the Classifieds & Auction Marketplace project, I was a Full-stack developer from May 2025 to present. I built a multilingual platform with responsive design, backend logic (controllers, routes, CRUD), social login, and currency conversion. I also implemented dynamic front-end features and AI-assisted mock data.",
@@ -136,7 +141,8 @@
 		"getInTouch": "Get In Touch",
 		"downloadCv": "Download CV",
 		"send": "Send",
-		"sending": "...Sending"
+		"sending": "...Sending",
+		"clearChat": "Clear chat"
 	},
 	"Metadata": {
 		"title": "VladZaver Portfolio / Full-stack Developer",
