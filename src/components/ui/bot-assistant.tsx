@@ -431,9 +431,11 @@ const ChatContent: React.FC<ChatContentProps> = ({
 					>
 						<MdOutlineFullscreen className='w-5 h-5' />
 						{/* Tooltip */}
-						<span className='absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 text-xs text-white bg-gray-800 rounded shadow-md whitespace-nowrap'>
-							{tChatbot('fullScreen')}
-						</span>
+						{!isFullscreen && (
+							<span className='absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 text-xs text-white bg-gray-800 rounded shadow-md whitespace-nowrap'>
+								{tChatbot('fullScreen')}
+							</span>
+						)}
 					</motion.button>
 					<motion.button
 						onClick={() => setIsOpen(false)}
@@ -442,9 +444,11 @@ const ChatContent: React.FC<ChatContentProps> = ({
 					>
 						<AiOutlineClose className='w-5 h-5' />
 						{/* Tooltip */}
-						<span className='absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 text-xs text-white bg-gray-800 rounded shadow-md whitespace-nowrap'>
-							{tChatbot('close')}
-						</span>
+						{!isFullscreen && (
+							<span className='absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 text-xs text-white bg-gray-800 rounded shadow-md whitespace-nowrap'>
+								{tChatbot('close')}
+							</span>
+						)}
 					</motion.button>
 				</div>
 			</div>
@@ -503,9 +507,11 @@ const ChatContent: React.FC<ChatContentProps> = ({
 				>
 					<IoChevronDown className='w-5 h-5' />
 					{/* Tooltip */}
-					<span className='absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 text-xs text-white bg-gray-800 rounded shadow-md whitespace-nowrap'>
-						{tChatbot('scrollToDown')}
-					</span>
+					{!isFullscreen && (
+						<span className='absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 text-xs text-white bg-gray-800 rounded shadow-md whitespace-nowrap'>
+							{tChatbot('scrollToDown')}
+						</span>
+					)}
 				</motion.button>
 			)}
 			<div className='p-4 border-t border-white/20'>
@@ -525,9 +531,11 @@ const ChatContent: React.FC<ChatContentProps> = ({
 					>
 						<AiOutlineSend className='w-5 h-5' />
 						{/* Tooltip */}
-						<span className='absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 text-xs text-white bg-gray-800 rounded shadow-md whitespace-nowrap'>
-							{tChatbot('send')}
-						</span>
+						{!isFullscreen && (
+							<span className='absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 text-xs text-white bg-gray-800 rounded shadow-md whitespace-nowrap'>
+								{tChatbot('send')}
+							</span>
+						)}
 					</motion.button>
 				</div>
 				<motion.button

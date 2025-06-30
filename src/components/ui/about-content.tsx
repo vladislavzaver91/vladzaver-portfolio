@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 
@@ -37,17 +36,16 @@ export const AboutContent = () => {
 						{t('description3')}
 					</p>
 				</div>
-				<Link href='/' className='flex-1'>
-					<div className='overflow-hidden relative w-full lg:w-[390px] h-[420px] sm:h-[480px] lg:h-[301px] rounded-2xl'>
-						<Image
-							src='/about/certificate.png'
-							alt='certificate'
-							fill
-							sizes='(max-width: 768px) 100vw, 264px'
-							className='object-cover object-center'
-						/>
-					</div>
-				</Link>
+
+				<div className='overflow-hidden relative w-full lg:w-[390px] h-[420px] sm:h-[480px] lg:h-[301px] rounded-2xl'>
+					<Image
+						src='/about/certificate.png'
+						alt='certificate'
+						fill
+						sizes='(max-width: 768px) 100vw, 264px'
+						className='object-cover object-center'
+					/>
+				</div>
 			</motion.div>
 		</div>
 	)
