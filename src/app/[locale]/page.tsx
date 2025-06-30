@@ -5,7 +5,6 @@ import { MobileScrollProgressNav } from '../../components/ui/mobile-scroll-progr
 import Hero from '../../components/hero'
 import AboutSection from '../../components/about-section'
 import SkillsSection from '../../components/skills-section'
-import { useMessages } from 'next-intl'
 import { BotAssistant } from '../../components/ui/bot-assistant'
 
 const ProjectsSection = dynamic(
@@ -22,8 +21,6 @@ const ContactsSection = dynamic(
 )
 
 export default function Home() {
-	const messages = useMessages()
-
 	return (
 		<main
 			id='home'

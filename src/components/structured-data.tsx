@@ -4,7 +4,7 @@ export function StructuredData() {
 		'@type': 'Person',
 		name: 'VladZaver',
 		jobTitle: 'Full-stack Developer',
-		url: 'https://yourdomain.com',
+		url: 'https://vladzaver-portfolio.vercel.app',
 		sameAs: [
 			'https://www.linkedin.com/in/vladislav-zavertaylo-480626264/',
 			'https://github.com/vladislavzaver91?tab=repositories',

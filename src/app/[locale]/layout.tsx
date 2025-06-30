@@ -8,7 +8,6 @@ import { routing } from '../../i18n/routing'
 import { Header } from '../../components/header'
 import { StructuredData } from '../../components/structured-data'
 import { Footer } from '../../components/footer'
-import { BotAssistant } from '../../components/ui/bot-assistant'
 
 const montserrat = Montserrat_Alternates({
 	weight: ['600', '800'],
@@ -59,7 +58,7 @@ export async function generateMetadata({
 		openGraph: {
 			title,
 			description,
-			url: `https://yourdomain.com/${locale}`,
+			url: `https://vladzaver-portfolio.vercel.app/${locale}`,
 			siteName: 'VladZaver Portfolio',
 			images: [
 				{
@@ -90,10 +89,10 @@ export async function generateMetadata({
 			},
 		},
 		alternates: {
-			canonical: `https://yourdomain.com/${locale}`,
+			canonical: `https://vladzaver-portfolio.vercel.app/${locale}`,
 			languages: {
-				en: 'https://yourdomain.com/en',
-				uk: 'https://yourdomain.com/uk',
+				en: 'https://vladzaver-portfolio.vercel.app/en',
+				uk: 'https://vladzaver-portfolio.vercel.app/uk',
 			},
 		},
 	}
