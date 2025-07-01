@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { getNavigation } from '../../data/nav-items.data'
+import { Tooltip } from './tooltip'
 
 export const VerticalHeader = () => {
 	const t = useTranslations('Header')
@@ -57,9 +58,7 @@ export const VerticalHeader = () => {
 					>
 						<item.icon className='w-6 h-6 group-hover:text-accentColor transition-colors duration-300' />
 						{/* Tooltip */}
-						<span className='absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 text-xs text-white bg-gray-800 rounded shadow-md whitespace-nowrap'>
-							{item.name}
-						</span>
+						<Tooltip>{item.name}</Tooltip>
 					</Link>
 				</motion.div>
 			))}

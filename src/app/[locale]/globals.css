@@ -23,7 +23,10 @@ body {
 	background: var(--foreground);
 	font-family: 'Rubik', sans-serif;
 	overflow-x: hidden;
-	overflow-y: scroll;
+
+	@media screen and (min-width: 1024px) {
+		overflow-y: scroll;
+	}
 }
 
 body::-webkit-scrollbar {

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { SOCIAL_LINKS } from '../../data/social-links.data'
 import { motion } from 'framer-motion'
+import { Tooltip } from './tooltip'
 
 export const SocialLinkList = () => {
 	const itemVariants = {
@@ -29,9 +30,7 @@ export const SocialLinkList = () => {
 						<item.icon className='w-6 h-6 group-hover:text-accentColor transition-colors duration-300' />
 					</Link>
 					{/* Tooltip */}
-					<span className='absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 text-xs text-white bg-gray-800 rounded shadow-md whitespace-nowrap'>
-						{item.name}
-					</span>
+					<Tooltip>{item.name}</Tooltip>
 				</motion.li>
 			))}
 		</ul>
